@@ -1,0 +1,563 @@
+%-------------------------------------------------------------------------
+\documentclass[report,USenglish,cleveref,autoref,a4paper]{lipics-v2021}
+%-------------------------------------------------------------------------
+\hideLIPIcs
+\bibliographystyle{plainurl}
+\usepackage{array,enumitem}
+\usepackage{colortbl}
+\usepackage[dvipsnames]{xcolor}
+\newcommand{\grayhline}{\arrayrulecolor{lightgray}\hline\arrayrulecolor{black}}
+\newcommand{\graycline}[2]{\arrayrulecolor{lightgray}\cline{#1-#2}\arrayrulecolor{black}}
+\nolinenumbers
+%-------------------------------------------------------------------------
+
+
+%-------------------------------------------------------------------------
+\newcommand{\myname}{Amir Nurmukhambetov}             % your full name
+\newcommand{\myshortname}{A.N.~Nurmukhambetov}             % your name with abbreviated first name(s)
+\newcommand{\mystudentid}{1930907}                % put your student id here
+\newcommand{\mysupervisor}{Prof.\ M.J.M.\ Roeloffzen}
+\newif\ifGuidelines
+\Guidelinestrue
+% \textbf{}\Guidelinesfalse                                  % uncomment when submitting your portfolio
+\ifGuidelines
+    \newcommand{\explanation}[1]{\emph{Explanation:} #1}
+\else 
+    \newcommand{\explanation}[1]{}
+\fi
+%-------------------------------------------------------------------------
+
+
+%-------------------------------------------------------------------------
+\begin{document}
+%-------------------------------------------------------------------------
+
+\ifGuidelines
+%-------------------------------------------------------------------------
+\section*{Guidelines for Bachelor End Projects in the ALGO Cluster}
+\thispagestyle{empty}
+%-------------------------------------------------------------------------
+This document describes the set-up of Bachelor End Projects in the ALGO cluster.
+The document also provides a template for your portfolio.
+
+
+%-------------------------------------------------------------------------
+\subparagraph{Supervision and execution.}
+%-------------------------------------------------------------------------
+Bachelor End Projects (BEPs) are individual research-oriented projects.
+The execution of the BEP should be done in an independent manner: the role of the
+supervisor is to monitor that you do not go into the wrong direction and to give
+you suggestions and feedback, not to help you solve the problem or debug your code. 
+
+BEPs are organized in \emph{circles}: groups of up to six students with the
+same supervisor and with a similar topic for their project. Each circle meets
+several times with their supervisor; see below for a detailed schedule. 
+During these meetings, students report on their progress and the
+supervisor can give suggestions on how to proceed. Students can also learn
+from other students or give them suggestions. Students may also help each other 
+outside the circle meetings. However, BEPs are individual projects, so students should 
+never share code or text, unless explicitly allowed by the supervisor.
+When using code or other material from external sources, this should
+be properly referenced in your final report.
+
+%-------------------------------------------------------------------------
+\subparagraph{Deliverables.}
+%-------------------------------------------------------------------------
+There are four written deliverables:
+\begin{itemize}
+	\item An initial \emph{project plan}, including time planning, milestones, and risk mitigation strategies. 
+	\item A \emph{midterm report} on the status of the BEP after the first quartile, an updated planning, 
+          and a draft version of a part of the final report. This draft version typically contains 
+          most of the introduction and possibly a description of the algorithms that you have developed 
+          and/or algorithms from the literature that you will use in your experiments. \emph{Discuss 
+          with your supervisor what is expected from you.}
+	\item The \emph{final report}, which should be at most 400 lines. See the template for
+          additional guidelines.
+	\item A \emph{reflection}, where you reflect on the planning, process, choices made during the project, and what you learned from it.
+\end{itemize}
+The fifth deliverable is the presentation, which will take place in the exam week of Q4.
+
+The written deliverables are combined into a single \emph{portfolio} that you must submit near the end
+of the course through Canvas. For archival purposes, you must also submit your initial planning, 
+your midterm report, and your final report through Canvas during the course; see the schedule below for deadlines.
+Note that the final portfolio must still include the initial project plan, the midterm report, and the final report.
+
+%-------------------------------------------------------------------------
+\subparagraph{Time sheets.}
+%-------------------------------------------------------------------------
+It is mandatory to maintain a time sheet in which you describe the activities 
+you performed and how much time you spent on them during each week of 
+the project. This helps you to keep track of how much time you spent on the 
+project---note that you are supposed to spend about 14 hours per week on the BEP---and if the time investment 
+for the various parts of the project is in line with your planning.
+This is also useful at the end of the project, when you have to write a reflection.
+Make your time sheets concrete. 
+Here is  an example.
+\\ \\
+\begin{tabular}{c| m{10cm}|c}
+\hline\hline
+Q1: week 7  & Circle meeting & 1.5 hours \\
+\cline{2-3}
+     & Polished motivation and problem statement, and
+     related work, in Section~1 of the final report. & 2 hours \\
+\cline{2-3}
+     & Finished first draft of Section 2.1 of the final report. & 6 hours \\
+\cline{2-3}
+     & Continued with the implementation of the greedy algorithm  & 4 hours \\
+\cline{2-3}
+     & \multicolumn{1}{r|}{week total} & 13.5 hours \\
+\hline \hline
+\end{tabular}
+
+
+%-------------------------------------------------------------------------
+\subparagraph{Overleaf and git.}
+%-------------------------------------------------------------------------
+Your portfolio must be written in \LaTeX{} using the provided template---see below---and
+you must use Overleaf (\url{https://www.overleaf.com/}). You should create a new
+project on Overleaf, named \texttt{ALGO-BEP-yyyy-name}, where \texttt{yyyy} is 
+the current year and \texttt{name} is your last name. After creating the project
+on Overleaf, you must invite your supervisor to the project. If you prefer to
+edit in a different environment than in Overleaf itself, you must update
+the Overleaf files every day that you have worked on the files.
+There is also a separate template for the time sheets, which must be maintained in Overleaf as well
+(in the same project).
+\begin{quote}
+\noindent \textbf{It is important that you work on your final report throughout the project:
+already write the motivation and problem statement and the related-work part of
+the introduction early on, write a description of your algorithms before implementing them,
+and so on.}
+\end{quote}
+For your code you must use \url{https://gitlab.tue.nl/users/sign_in} and make sure
+your supervisor has access to your repository.
+
+
+%-------------------------------------------------------------------------
+\subparagraph{Plagiarism and AI usage.}
+%-------------------------------------------------------------------------
+As already mentioned, you should not use code or text from other students
+(unless explicitly allowed). The same is true for code or text from other sources:
+before you use material from other sources, you must always ask permission from your supervisor.
+
+As for AI usage: it is allowed to use AI tools to make small improvements in
+the text you have written---in particular, it is allowed to use {\sc writefull} on
+Overleaf---but it is not allowed to use AI tools to generate entire paragraphs.
+Similarly, you can use AI tools to debug your own code or to generate small code snippets,
+but not to generate long pieces of code.
+
+%-------------------------------------------------------------------------
+\subparagraph{Communication during the course.}
+%-------------------------------------------------------------------------
+Communication with the supervisor will mainly be done via the circle meetings.
+There will also be a Slack channel for each circle. The main goal of the 
+Slack channel will be to facilitate communication between students in the circle.
+You may also ask questions to the supervisor in the channel, but supervisors
+may not respond immediately or they may defer answering the questions to the
+next circle meeting.
+
+%-------------------------------------------------------------------------
+\subparagraph{Meeting schedule.}
+%-------------------------------------------------------------------------
+Below is the meeting schedule for the BEPS in Q3+Q4 of the academic year 25/26.
+Some remarks:
+\begin{itemize}
+\item Attending \emph{all} circle meetings (in person) is mandatory.
+\item Deadlines for the deliverables are in \textcolor{red}{red}. These delivarables
+should be submitted through the appropriate Assignment in Canvas.
+\item Other ``submissions'' (draft versions, time sheets) do not have to be done through
+       Canvas; just make sure that they are available through Overleaf (that is,
+       make sure that your documents in Overleaf are up-to-date and contain
+       the required items).
+\item The weeks of the circle meetings may deviate from the general schedule below.
+The exact schedule (including the day and time of the meetings) is determined by your supervisor.
+\end{itemize}
+%-------------------------------------------------------------------------
+\begin{tabular}{c|r|l|l|l}
+quartile & week & dates & meetings & deadlines for deliverables \\
+\hline
+Q3  & 1 & Feb 2--6 & Kickoff meeting &   \\
+\graycline{2}{5}
+    & 2 & Feb 9--13 & Circle meeting & \parbox[c][12mm][c]{50mm}{\textcolor{red}{Friday, Feb 13, 23:59} \\ Initial planning} \\
+\graycline{2}{5}
+    &  \multicolumn{4}{c}{\emph{Carnaval week}}  \\
+\graycline{2}{5}
+    & 3 & Feb 23--27 &  &  \\
+\graycline{2}{5}
+    & 4 & March 2--6 & Circle meeting & \\
+\graycline{2}{5}
+    & 5 &  Mar 9--13 &  & \\
+\graycline{2}{5}
+    & 6 & Mar 16--20 &  & \\
+\graycline{2}{5}
+    & 7 & Mar 23--27 & Circle meeting & \\
+\graycline{2}{5}
+    & 8 & Mar 30 -- Apr 3 &  &  \\
+\graycline{2}{5}
+    & 9 & Apr 6--10 & \emph{Exam week} & \parbox[c][17mm][c]{50mm}{\textcolor{red}{Friday, Apr 10, 23:59} \\ Midterm report \\ (including updated planning)} \\
+\graycline{2}{5}
+    & 10 & Apr 13--17 &  \multicolumn{2}{c}{\emph{Exam week} \hspace*{40mm}}  \\
+\hline
+Q4  & 1 & Apr 20--24 & Circle meeting & \\
+\graycline{2}{5}
+    & 2 & Apr 27 -- May 1 &  & \\
+\graycline{2}{5}
+    & 3 & May 4--8 &  &  \parbox[c][12mm][c]{50mm}{Friday, May 8, 23:59 \\ Draft 1.0 of final report}\\
+\graycline{2}{5}
+    & 4 & May 11--15 & Circle meeting & \\
+\graycline{2}{5}
+    & 5 & May 18--22 &  & \\
+\graycline{2}{5}
+    & 6 & May 25--29 &  & \\
+\graycline{2}{5}
+    & 7 & Jun 1--5 &  &  \parbox[c][12mm][c]{50mm}{Wednesday, June 3, 23:59 \\ Complete draft of final report} \\
+\graycline{2}{5}
+    & 8 & Jun 8--12  & Circle meeting & \parbox[c][12mm][c]{50mm}{\textcolor{red}{Friday, June 12, 23:59} \\ Final report}\\
+\graycline{2}{5}
+    & 9 & Jun 15--19  &  & \parbox[c][17mm][c]{50mm}{\textcolor{red}{Friday, June 19, 23:59} \\ Complete portfolio\\(including reflection)} \\ 
+\cline{2-5}
+    & 10 & Jun 22--26 &  \multicolumn{2}{c}{\emph{Exam week:} Final presentations}  \\
+    & 11 & Jun 29 -- Jul 3 &  \multicolumn{2}{c}{\emph{Exam week:} Final presentations}  \\
+\hline
+\end{tabular}
+%-------------------------------------------------------------------------
+
+
+%-------------------------------------------------------------------------
+\subparagraph{How to use this document as a template for your portfolio.} 
+%-------------------------------------------------------------------------
+To use this template, insert your full name, name with abbreviated first names,
+student id, and name of your supervisor in the relevant place in the {\LaTeX} source file 
+(lines 11, 12, and 13).
+Before submitting, un-comment \texttt{\textbackslash{}Guidelinesfalse} on line~18.
+\emph{Using the template is mandatory; do not change the document class and do not
+make changes to the layout.}
+
+\newpage
+%-------------------------------------------------------------------------
+\else                                           % do not show guidelines
+\fi
+%-------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------
+\title{PORTFOLIO Bachelor Final Project (2ICS00)}
+%-------------------------------------------------------------------------
+\author{Student: \myname~(\mystudentid)}{Eindhoven University of Technology}{}{}{}
+\author{Supervisor: \mysupervisor~(ALGO)}{$\mbox{}$}{}{}{}
+\authorrunning{\myshortname}
+%-------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------
+\maketitle
+\newpage
+%-------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------
+\setcounter{page}{1}
+\tableofcontents
+\newpage
+%-------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------
+\part{Process Documents}
+\label{part:process}
+\setcounter{page}{1}
+\thispagestyle{empty}
+\newpage
+%-------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------
+\section{Project description and initial planning (max 2 pages)}
+%-------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------
+\subsection{Project description}
+\label{subsec:project}
+%-------------------------------------------------------------------------
+% \explanation{Clearly describe the problem(s) you plan to investigate, the scientific and/or
+% societal or industrial relevance, and the goal(s) of the project.}
+
+Time-constrained TSP is a variant of the Traveling Sailsman Problem in which given an upper bound $L$ the total length of the tour and each point in the input set $P$ is assigned a value of $v(p)$. The objective is to find a tour of total length of at most $L$ and visit a subset of points whose total value is maxmized. 
+\\ \\
+In this project, I'll consider an extension of time-constrained TSP in which visiting a point $p$ replenishes the remaining travel budget $L$ with a function $r(p)$. I'll investigate existing algorithmic approaches and performance under realistic constraints, including a maximum travel budget (capacity) $L$.
+
+\subsubsection{Relevance}
+
+This problem is relevant to transportation logistics. Consider a vehicle transporting goods with a limited fuel capacity. The driver must choose which drop-off locations to service in order to maximize total profit (e.g., payment per delivery) while remaining fuel-feasible. Along the route, the vehicle may stop at designated refueling locations (such as gas stations or depots) that replenish fuel, typically up to the tank capacity. Here the travel budget corresponds to fuel, and $r(p)$ models models the amount of fuel regained when refueling at location $p$.
+
+\subsubsection{Goal}
+
+The goal of this project is to extend time-constrained TSP formulations by introducing refueling decisions with a hard capacity limit, and to evaluate the approach by comparing it with existing methods on logistics-style benchmark instances.
+
+\subsubsection{Scope}
+
+The project will consider heuristic solution approaches for the time-constrained TSP and related prize-collecting routing problems. In particular, as baseline methods, I will (i) implement a mixed-integer linear program (MILP) for the prize-collecting problem, and (ii) implement an expanded-graph (state-space) baseline for the refueling variant by discretizing fuel into levels, then (iii) I will solve the resulting model using a MILP to obtain a strong baseline for comparison.
+\\ \\
+On these baselines, I will implement improvement heuristics, including 2-opt/3-opt route polishing and prize-aware neighborhood moves (e.g., add/drop/swap) while maintaining feasibility with respect to both the length budget and refueling dynamics.
+\\ \\
+Experiments will be conducted on synthetic logistics-style instances, and will report collected reward value, feasibility, and computational runtime.
+
+%-------------------------------------------------------------------------
+\subsection{Planning}
+\label{subsec:planning}
+%-------------------------------------------------------------------------
+% \explanation{Give a planning for the project. Make sure you include all relevant aspects (for
+% experimental projects this could include: literature study, 
+% design and/or theoretical analysis of algorithms, implementation of algorithms, generation of test sets,
+% performing experiments, evaluation of the outcome of the experiments, writing of the final report, preparation
+% of the final presentation.}
+
+The BEP spans two quartiles (Q3 and Q4). The planning below is organized per week. I'm planning to work on report throughout the the whole process documenting steps along the way.
+
+\subsubsection{Q3: Literature study, 1 experiment, MILP baseline (no refueling)}
+
+\begin{itemize}
+  \item \textbf{Week 1 -- 2: Literature study I (core problems and baselines)}
+  \begin{itemize}
+    \item Study on classical formulations: orienteering, prize-collecting TSP, budgeted TSP.
+    \item Identify common baseline heuristics and MILP formulations used in research.
+    \item Research on routing with refueling/recharging/resource constraints (state-space / layered graphs, EV routing variants).
+  \end{itemize}
+
+  \item \textbf{Week 3 -- 4: Non-refueling MILP formulation}
+  \begin{itemize}
+    \item Write MILP for prize-collecting routing with length budget $L$.
+    \item Implement parsing and instance representation; validate on small toy cases.
+  \end{itemize}
+
+  \item \textbf{Week 5 -- 6: Dataset generation I (synthetic logistics-style)}
+  \begin{itemize}
+    \item Generate first dataset family (e.g., uniform points in a square + clustered points), assign prizes.
+    \item Run MILP on experiments to confirm feasibility and scaling behavior.
+  \end{itemize}
+
+  \item \textbf{Week 7 -- 8: Midterm writing and preparation (baseline results)}
+  \begin{itemize}
+    \item Produce midterm results: non-refueling MILP + 1 dataset + basic heuristic baselines.
+    \item Write out initial drafts (problem statement, methodology, preliminary results).    
+  \end{itemize}
+  
+  \item \textbf{Week 9 -- 10: Buffer and transition to refueling variant}
+  \begin{itemize}
+    \item Address midterm feedback and refactor code where necessary.
+    \item Finalize design choices for fuel discretization and expanded-graph modeling.
+  \end{itemize}
+\end{itemize}
+
+\subsubsection{Q4: Refueling model, expanded graph, full report}
+
+\begin{itemize}
+  \item \textbf{Week 1 -- 2: Expanded-graph model design}
+  \begin{itemize}
+    \item Implement expanded-graph construction on datasets.
+  \end{itemize}
+  
+  
+  \item \textbf{Week 3: Expanded-graph MILP implementation}
+  \begin{itemize}
+    \item Implement expanded-graph construction and MILP baseline on the expanded graph.
+    \item Validate on small instances where refueling is necessary to reach high-value solutions.
+  \end{itemize}
+  
+  \item \textbf{Week 4 -- 5: Dataset generation II}
+  \begin{itemize}
+    \item Generate additional datasets (different spatial distributions, prize distributions, refuel node densities).
+    \item Define multiple refueling scenarios (sparse vs dense refuel points; different refuel functions if applicable).
+  \end{itemize}
+
+  \item \textbf{Week 5 -- 7: Main experimental campaign}
+  \begin{itemize}
+    \item Run experiments across datasets and budgets with consistent time limits.
+    \item Collect metrics: value, runtime, feasibility, and (where possible) optimality gaps vs MILP.
+  \end{itemize}
+
+  \item \textbf{Week 7 -- 9: Report writing + presentation preparation}
+  \begin{itemize}
+    \item Finalize related work and discussion; describe limitations and future work.
+    \item Prepare final presentation slides and rehearse.
+  \end{itemize}
+\end{itemize}
+
+
+%-------------------------------------------------------------------------
+\section{Midterm status report (max 1 page)}
+%-------------------------------------------------------------------------
+\explanation{Give an overview of what you did so far for the project,
+which difficulties you encountered, and what still needs to be done in the remaining weeks
+of the project. Explain to what extent your initial planning needs to be adjusted, 
+and give the new planning for the remaining weeks of the project.
+
+In addition to the status report, you must write a draft version
+of (part of) the final report. This should include Section~\ref{sec:intro}
+(except for the ``Our contribution'' part)
+and a significant part of Section~\ref{sec:algorithms}.}
+
+%-------------------------------------------------------------------------
+\section{Reflection (max 1 page)}
+%-------------------------------------------------------------------------
+\explanation{Reflect on your execution of the project: What did you learn? 
+Which part of the research went as you anticipated and which parts did not?
+Would you do anything differently, if you had to do a similar project again?}
+
+
+
+
+
+%-------------------------------------------------------------------------
+\newpage
+%-------------------------------------------------------------------------
+
+
+%-------------------------------------------------------------------------
+\part{Report}
+\label{part:report}
+%-------------------------------------------------------------------------
+\newpage
+%-------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------
+\setcounter{section}{0}
+\setcounter{page}{1}
+\thispagestyle{empty}
+\section*{THE TITLE OF YOUR REPORT}         % write the title of your reprt here
+\textbf{\myname}
+
+\linenumbers
+%-------------------------------------------------------------------------
+
+
+%-------------------------------------------------------------------------
+\begin{abstract}
+\explanation{Briefly describe the problem that you have studied and the main results
+and conclusions of your work. Typically the abstract consists of a single
+paragraph of about 5--10 lines.}
+\end{abstract}
+%-------------------------------------------------------------------------
+
+
+
+%-------------------------------------------------------------------------
+\section{Introduction}
+\label{sec:intro}
+%-------------------------------------------------------------------------
+\explanation{Typically 1.5--2 pages.}
+
+
+\subparagraph{Motivation and problem statement.}
+\explanation{Give a motivation for the problem you will study. 
+Often you can do this by discussing a real-world application
+that is related to your problem.  After that, you can describe how the problem 
+can be abstracted, to arrive at your problem.
+(In some cases, it may be more appropriate to motivate the problem 
+from a purely scientific rather than an applied perspective.)
+Make sure that your problem statement is unambiguous and clear.}
+
+\subparagraph{Related work.}
+\explanation{Discuss what is known in the literature about your problem and 
+any relevant, closely related, problems. For each paper that you discuss, 
+make it clear which problem variant they solve, 
+and try to be as explicit about the results as possible. 
+
+Structure the discussion in such a way that the relation between the papers is clear.
+For example, a paper may study exactly the same problem as another paper but
+obtain a better result, or they may study a more general version of the problem.}
+
+\subparagraph{Contributions.}
+\explanation{Give a summary of your work, and relate it to what is known in the literature.
+This would typically be one or two paragraphs.
+\\[5mm]
+\emph{Note:} The template below is written with a project in mind that has an experimental
+component. For other types of projects, many of the guidelines given below still apply,
+but the structure would be slightly different;
+please discuss with your supervisor what is expected.}
+
+%-------------------------------------------------------------------------
+\section{The algorithms}
+\label{sec:algorithms}
+%-------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------
+\subsection{Description of the algorithms}
+\label{subsec:description}
+%-------------------------------------------------------------------------
+\explanation{Describe the algorithms that you developed and/or relevant algorithms
+from the literature. Often this is done best using high-level (that is, not too detailed)
+pseudocode plus a textual explanation. For algorithms from the literature, discuss with 
+your supervisor in how much detail they should be presented.}
+
+
+%-------------------------------------------------------------------------
+\subsection{Analysis of the algorithms}
+\label{subsec:analysis}
+%-------------------------------------------------------------------------
+\explanation{For each of the algorithms that you presented in Section~\ref{subsec:description}
+do the following: Analyze the asymptotic running time of your algorithm(s) and, if possible,
+prove their correctness. If your algorithm is a heuristic that may sometimes
+fail to produce a correct solution, this should be discussed as well.
+For optimization problems: discuss the quality of the solutions computed by your algorithm(s).
+For algorithms from the literature: discuss with your supervisor in
+how much detail you should do the analysis.}
+
+%-------------------------------------------------------------------------
+\section{Experimental evaluation}
+\label{sec:evaluation}
+%-------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------
+\subsection{Data sets}
+\label{subsec:data}
+%-------------------------------------------------------------------------
+\explanation{Clearly describe the data sets that you use. If you use
+synthetic data sets, describe how they are generated in such a way
+that a reader would be able to generate the data sets themselves.
+Explain the roles of the parameter(s) used to generate the data sets.
+When possible and relevant, add figures of example data sets.
+If you use data sets from other sources, provide a reference
+to those data sets.}
+
+%-------------------------------------------------------------------------
+\subsection{Experiments and discussion}
+\label{subsec:experiments}
+%-------------------------------------------------------------------------
+\explanation{For each experiment, describe the goal (what do you want
+to investigate?) and possibly a hypothesis, and the set-up of the experiment.
+The report the outcome (typically using graphs, or perhaps a table)
+and discuss the outcome. Try to not only say what the outcome is, but also
+to explain it. If you see certain strange effects that you cannot explain,
+then just say so---this is better than just ignoring the effects.
+When possible relate the outcome to the theoretical analysis you did in Section~\ref{subsec:analysis}.}
+
+%-------------------------------------------------------------------------
+\section{Concluding remarks}
+%-------------------------------------------------------------------------
+\explanation{Briefly discuss the results that you obtained, focusing on
+strengths and weaknesses, and discuss possible directions for future research.
+This would typically be about half a page.}
+
+%-------------------------------------------------------------------------
+\bibliography{references}
+%-------------------------------------------------------------------------
+\explanation{Put your references in the file \texttt{references.bib}. You can cite
+books~\cite{clrs-ia-2009}, journal papers~\cite{lt-stpg-79}, or
+conference papers~\cite{DBLP:conf/compgeom/Chang0024}. Add a \texttt{doi} 
+if possible. DBLP\footnote{\url{https://dblp.org/}} is a good source for finding reliable 
+references. Note, however, that the bibtex entries in DBLP for conferences papers sometimes
+contain the location and date of the conference in the title; this should be removed.}
+
+
+%-------------------------------------------------------------------------
+\appendix 
+\newpage
+%-------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------
+\section{Appendix: Additional Material}             % remove if not used
+%-------------------------------------------------------------------------
+\explanation{In some cases it can be useful to put some material,
+such as tables with additional experimental results, into an appendix.
+Before adding an appendix, discuss this with your supervisor.
+Note that the main text should contain all material that is important,
+and that the assessment of your work will be done based on the main text.}
+
+%-------------------------------------------------------------------------
+\end{document}
+%-------------------------------------------------------------------------
