@@ -308,72 +308,54 @@ Experiments will be conducted on synthetic logistics-style instances, and will r
 
 The BEP spans two quartiles (Q3 and Q4). The planning below is organized per week. I'm planning to work on report throughout the the whole process documenting steps along the way.
 
-\subsubsection{Q3: Literature study, 1 experiment, MILP baseline (no refueling)}
+\subsubsection{Q3: Literature study, Greedy Heuristic, and Dataset Design}
 
 \begin{itemize}
-  \item \textbf{Week 1 -- 2: Literature study I (core problems and baselines)}
+  \item \textbf{Week 1 -- 4: Literature Study \& Greedy Baseline}
   \begin{itemize}
-    \item Study on classical formulations: orienteering, prize-collecting TSP, budgeted TSP.
-    \item Identify common baseline heuristics and MILP formulations used in research.
-    \item Research on routing with refueling/recharging/resource constraints (state-space / layered graphs, EV routing variants).
+    \item Study literature on the Prize-Collecting TSP, Orienteering Problem, and common heuristics (local search, metaheuristics).
+    \item Implement a greedy insertion heuristic (value-to-cost ratio) as a fast baseline.
+    \item Develop core C++ infrastructure: instance representation, distance calculations, and solution I/O.
   \end{itemize}
 
-  \item \textbf{Week 3 -- 4: Non-refueling MILP formulation}
+  \item \textbf{Week 5 -- 8: Dataset Generation Design \& Midterm Report}
   \begin{itemize}
-    \item Write MILP for prize-collecting routing with length budget $L$.
-    \item Implement parsing and instance representation; validate on small toy cases.
-  \end{itemize}
-
-  \item \textbf{Week 5 -- 6: Dataset generation I (synthetic logistics-style)}
-  \begin{itemize}
-    \item Generate first dataset family (e.g., uniform points in a square + clustered points), assign prizes.
-    \item Run MILP on experiments to confirm feasibility and scaling behavior.
-  \end{itemize}
-
-  \item \textbf{Week 7 -- 8: Midterm writing and preparation (baseline results)}
-  \begin{itemize}
-    \item Produce midterm results: non-refueling MILP + 1 dataset + basic heuristic baselines.
-    \item Write out initial drafts (problem statement, methodology, preliminary results).    
+    \item Design a strategy for generating varied and challenging datasets, including uniformly random and clustered (Gaussian Mixture Model) point distributions.
+    \item Prepare the midterm report, documenting the pivot, the implemented greedy heuristic, and the updated plan for Q4.
   \end{itemize}
   
-  \item \textbf{Week 9 -- 10: Buffer and transition to refueling variant}
+  \item \textbf{Week 9 -- 10: Buffer and Finalize Dataset Generator}
   \begin{itemize}
-    \item Address midterm feedback and refactor code where necessary.
-    \item Finalize design choices for fuel discretization and expanded-graph modeling.
+    \item Address any feedback from the midterm report.
+    \item Implement the Python-based dataset generator script.
   \end{itemize}
 \end{itemize}
 
-\subsubsection{Q4: Refueling model, expanded graph, full report}
+\subsubsection{Q4: Advanced Heuristics, Experiments, and Final Report}
 
 \begin{itemize}
-  \item \textbf{Week 1 -- 2: Expanded-graph model design}
+  \item \textbf{Week 1 -- 3: Local Search Implementation}
   \begin{itemize}
-    \item Implement expanded-graph construction on datasets.
+    \item Implement a 2-opt local search procedure to improve solutions from the greedy heuristic.
+    \item Test and debug the local search on small instances.
   \end{itemize}
   
-  
-  \item \textbf{Week 3: Expanded-graph MILP implementation}
+  \item \textbf{Week 4 -- 6: Genetic Algorithm Implementation}
   \begin{itemize}
-    \item Implement expanded-graph construction and MILP baseline on the expanded graph.
-    \item Validate on small instances where refueling is necessary to reach high-value solutions.
+    \item Design and implement a Genetic Algorithm (GA). This will include defining crossover and mutation operators suitable for permutation-based solutions.
+    \item Integrate the 2-opt local search as a solution improvement step within the GA (memetic algorithm).
   \end{itemize}
   
-  \item \textbf{Week 4 -- 5: Dataset generation II}
+  \item \textbf{Week 7 -- 8: Experimental Campaign \& Analysis}
   \begin{itemize}
-    \item Generate additional datasets (different spatial distributions, prize distributions, refuel node densities).
-    \item Define multiple refueling scenarios (sparse vs dense refuel points; different refuel functions if applicable).
+    \item Run comprehensive experiments comparing the greedy, greedy + 2-opt, and GA approaches across all generated datasets.
+    \item Analyze the results, focusing on solution quality (total value) versus runtime.
   \end{itemize}
 
-  \item \textbf{Week 5 -- 7: Main experimental campaign}
+  \item \textbf{Week 9 -- 10: Final Report and Presentation}
   \begin{itemize}
-    \item Run experiments across datasets and budgets with consistent time limits.
-    \item Collect metrics: value, runtime, feasibility, and (where possible) optimality gaps vs MILP.
-  \end{itemize}
-
-  \item \textbf{Week 7 -- 9: Report writing + presentation preparation}
-  \begin{itemize}
-    \item Finalize related work and discussion; describe limitations and future work.
-    \item Prepare final presentation slides and rehearse.
+    \item Write the final report, detailing the algorithms, experimental setup, and results.
+    \item Prepare and rehearse the final presentation.
   \end{itemize}
 \end{itemize}
 
@@ -390,6 +372,25 @@ In addition to the status report, you must write a draft version
 of (part of) the final report. This should include Section~\ref{sec:intro}
 (except for the ``Our contribution'' part)
 and a significant part of Section~\ref{sec:algorithms}.}
+
+\textbf{Overview of Progress:}
+Work so far has focused on establishing a baseline for the Time-Constrained TSP. A greedy heuristic, which iteratively adds nodes based on the best value-to-insertion-cost ratio while respecting the length budget `L`, has been successfully implemented in C++. The necessary infrastructure for instance generation, distance calculations (respecting adjacency), and solution output is also complete.
+
+\textbf{Difficulties and Pivot:}
+The initial plan was to develop a Mixed-Integer Linear Program (MILP) and investigate a variant with refueling stops. However, I have pivoted the project to focus exclusively on developing high-performance heuristics for the standard Time-Constrained TSP. This decision was made for two main reasons:
+\begin{enumerate}
+    \item The refueling variant adds significant complexity, and focusing on the core problem allows for a deeper and more thorough investigation of advanced heuristics.
+    \item MILP-based approaches are generally limited to small instances, whereas the new focus on heuristics (like local search and genetic algorithms) will allow for experiments on larger, more realistic datasets.
+\end{enumerate}
+
+\textbf{Remaining Work and Updated Planning:}
+The core task for the remainder of the project is to build upon the greedy baseline. The next steps are:
+\begin{enumerate}
+    \item \textbf{Dataset Generation:} Create structured datasets, particularly clustered instances using Gaussian Mixture Models, to rigorously test algorithm performance. This will be done using a Python script.
+    \item \textbf{Local Search:} Implement a 2-opt local search heuristic to improve the solutions found by the greedy algorithm.
+    \item \textbf{Metaheuristic:} Develop a Genetic Algorithm to find high-quality solutions, likely incorporating the local search as an improvement step.
+    \item \textbf{Experimental Evaluation:} Conduct a comprehensive experimental campaign to compare the performance of the greedy, local search, and genetic algorithms across the generated datasets.
+\end{enumerate}
 
 %-------------------------------------------------------------------------
 \section{Reflection (max 1 page)}
