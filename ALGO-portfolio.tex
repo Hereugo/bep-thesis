@@ -363,19 +363,9 @@ The BEP spans two quartiles (Q3 and Q4). The planning below is organized per wee
 %-------------------------------------------------------------------------
 \section{Midterm status report (max 1 page)}
 %-------------------------------------------------------------------------
-\explanation{Give an overview of what you did so far for the project,
-which difficulties you encountered, and what still needs to be done in the remaining weeks
-of the project. Explain to what extent your initial planning needs to be adjusted, 
-and give the new planning for the remaining weeks of the project.
-
-In addition to the status report, you must write a draft version
-of (part of) the final report. This should include Section~\ref{sec:intro}
-(except for the ``Our contribution'' part)
-and a significant part of Section~\ref{sec:algorithms}.}
-
 \textbf{Overview of Progress:}
 Work so far has focused on establishing a baseline for the Time-Constrained TSP. A greedy heuristic, which iteratively adds nodes based on the best value-to-insertion-cost ratio while respecting the length budget `L`, has been successfully implemented in C++. The necessary infrastructure for instance generation, distance calculations (respecting adjacency), and solution output is also complete.
-
+\\ \\
 \textbf{Difficulties and Pivot:}
 The initial plan was to develop a Mixed-Integer Linear Program (MILP) and investigate a variant with refueling stops. However, I have pivoted the project to focus exclusively on developing high-performance heuristics for the standard Time-Constrained TSP. This decision was made for two main reasons:
 \begin{enumerate}
@@ -466,14 +456,16 @@ these constraints, the dispatcher faces a combinatorial decision: which
 subset of customers to visit, and in what order, so as to maximise the
 total collected value---whether measured in revenue, number of parcels,
 or customer priority score. In this setting, the selection of delivery points
-and the underlying routing problem is generally known as the Time-Constrained 
-Traveling Salesman Problem (TTSP) or the Orienteering Problem. In general, the
+and the underlying routing problem is generally known as the \textbf{Time-Constrained 
+Traveling Salesman Problem} (TTSP) or the \textbf{Orienteering Problem}. In general, the
 TTSP is defined by:
+
 \begin{itemize}
 \item A set of candidate locations (e.g., delivery points), each associated with a profit or value.
-\item A hard constraint on the total distance (or time) of the tour, reflecting operational limits.
+\item The travel time between locations.
+\item A hard constraint on the total distance (or time) of the tour, reflecting operational constraints.
 \end{itemize}
-\\ \\
+
 This situation is by no means unique to delivery logistics. Similar
 trade-offs arise in autonomous vehicle routing~\cite{}, drone-based
 infrastructure inspection~\cite{}, and mobile tourist guidance~\cite{},
@@ -482,34 +474,43 @@ of points of interest (POIs) within a limited time budget~\cite{Vansteenwegen200
 In each case, the common behaviour is the same: a set of candidate
 locations, each carrying a profit, and a hard bound on the total
 distance (or time) of the tour.
-\\ \\
 
-% Time-constrained Traveling Salesman Problem (TTSP) is a variant of the 
-% Traveling Salesman Problem \ref{}, defined on a set of points in the
-% Euclidean plane. Given an upper bound $L$ on the total length of the tour,
-% each point in the input set $P \subset \mathbb{R}^2$ is assigned a 
-% value of $v(p)$. The objective is to find a tour of total length at 
-% most $L$ that visits a subset of points whose total value is maximized.
+In the paper, .
+
+The paper is structured as follows: \textbf{TODO}
 
 \subparagraph{Related work.}
-\explanation{Discuss what is known in the literature about your problem and 
-any relevant, closely related, problems. For each paper that you discuss, 
-make it clear which problem variant they solve, 
-and try to be as explicit about the results as possible. 
+% \explanation{Discuss what is known in the literature about your problem and 
+% any relevant, closely related, problems. For each paper that you discuss, 
+% make it clear which problem variant they solve, 
+% and try to be as explicit about the results as possible. 
 
-Structure the discussion in such a way that the relation between the papers is clear.
-For example, a paper may study exactly the same problem as another paper but
-obtain a better result, or they may study a more general version of the problem.}
+% Structure the discussion in such a way that the relation between the papers is clear.
+% For example, a paper may study exactly the same problem as another paper but
+% obtain a better result, or they may study a more general version of the problem.}
 
+The TTSP is formalized and defined as follows: on a set of points in the
+Euclidean plane. Given an upper bound $L$ on the total length of the tour,
+each point in the input set $P \subset \mathbb{R}^2$ is assigned a 
+value of $v(p)$. The objective is to find a tour of total length at 
+most $L$ that visits a subset of points whose total value is maximized. This section
+introduces the different variants of the problem that have been defined in literature.
+
+For example Vansteenwegen et al.~\cite{} extends the basic model with practical attributes 
+such as points of interests (POI) opening hours and visit durations. \textbf{TODO Expand}
+
+Another variant defined by Sebastia and Marzal~\cite{} incorporate travel-style preferences into account. \textbf{TODO Expand}
 
 \subparagraph{Contributions.}
-\explanation{Give a summary of your work, and relate it to what is known in the literature.
-This would typically be one or two paragraphs.
-\\[5mm]
-\emph{Note:} The template below is written with a project in mind that has an experimental
-component. For other types of projects, many of the guidelines given below still apply,
-but the structure would be slightly different;
-please discuss with your supervisor what is expected.}
+% \explanation{Give a summary of your work, and relate it to what is known in the literature.
+% This would typically be one or two paragraphs.
+% \\[5mm]
+% \emph{Note:} The template below is written with a project in mind that has an experimental
+% component. For other types of projects, many of the guidelines given below still apply,
+% but the structure would be slightly different;
+% please discuss with your supervisor what is expected.}
+
+\textbf{TODO}
 
 %-------------------------------------------------------------------------
 \section{The algorithms}
@@ -520,10 +521,12 @@ please discuss with your supervisor what is expected.}
 \subsection{Description of the algorithms}
 \label{subsec:description}
 %-------------------------------------------------------------------------
-\explanation{Describe the algorithms that you developed and/or relevant algorithms
-from the literature. Often this is done best using high-level (that is, not too detailed)
-pseudocode plus a textual explanation. For algorithms from the literature, discuss with 
-your supervisor in how much detail they should be presented.}
+% \explanation{Describe the algorithms that you developed and/or relevant algorithms
+% from the literature. Often this is done best using high-level (that is, not too detailed)
+% pseudocode plus a textual explanation. For algorithms from the literature, discuss with 
+% your supervisor in how much detail they should be presented.}
+
+\subsubsection{Greedy Baseline}
 
 The implemented problem setting uses node~0 as the depot, while every other node
 has an associated reward value. Distances are Euclidean on the edges that are
@@ -552,6 +555,11 @@ include it in the tour. At the same time, the method is inherently myopic,
 because every decision is based only on the current tour and the locally best
 insertion score. Consequently, it serves as a practical baseline, but it does
 not guarantee an optimal solution.
+This section describes and introduces several algorithms and approaches of that were used.
+
+\subsubsection{Local Search}
+
+\subsubsection{Genetic Algorithm}
 
 %-------------------------------------------------------------------------
 \subsection{Analysis of the algorithms}
