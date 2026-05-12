@@ -363,19 +363,9 @@ The BEP spans two quartiles (Q3 and Q4). The planning below is organized per wee
 %-------------------------------------------------------------------------
 \section{Midterm status report (max 1 page)}
 %-------------------------------------------------------------------------
-\explanation{Give an overview of what you did so far for the project,
-which difficulties you encountered, and what still needs to be done in the remaining weeks
-of the project. Explain to what extent your initial planning needs to be adjusted, 
-and give the new planning for the remaining weeks of the project.
-
-In addition to the status report, you must write a draft version
-of (part of) the final report. This should include Section~\ref{sec:intro}
-(except for the ``Our contribution'' part)
-and a significant part of Section~\ref{sec:algorithms}.}
-
 \textbf{Overview of Progress:}
 Work so far has focused on establishing a baseline for the Time-Constrained TSP. A greedy heuristic, which iteratively adds nodes based on the best value-to-insertion-cost ratio while respecting the length budget `L`, has been successfully implemented in C++. The necessary infrastructure for instance generation, distance calculations (respecting adjacency), and solution output is also complete.
-
+\\ \\
 \textbf{Difficulties and Pivot:}
 The initial plan was to develop a Mixed-Integer Linear Program (MILP) and investigate a variant with refueling stops. However, I have pivoted the project to focus exclusively on developing high-performance heuristics for the standard Time-Constrained TSP. This decision was made for two main reasons:
 \begin{enumerate}
