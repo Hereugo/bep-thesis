@@ -1,10 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.5.12)  12 MAY 2026 10:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.5.12)  12 MAY 2026 12:23
 entering extended mode
  restricted \write18 enabled.
- file:line:error style messages enabled.
  %&-line parsing enabled.
-**/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex
-(/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex
+**ALGO-portfolio.tex
+(./ALGO-portfolio.tex
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-03-20>
 (./lipics-v2021.cls
@@ -198,7 +197,7 @@ Package babel Info: Importing font and identification data for english
 (babel)             from babel-en.ini. Reported on input line 4348.
  (/Users/hereugo/Library/TinyTeX/texmf-dist/tex/generic/babel/errbabel.def)
 
-/Users/hereugo/Library/TinyTeX/texmf-dist/tex/generic/babel/babel.sty:4348: Package babel Error: Unknown option 'english'.
+! Package babel Error: Unknown option 'english'.
 (babel)                Suggested actions:
 (babel)                * Make sure you haven’t misspelled it
 (babel)                * Check in the babel manual that it's supported
@@ -586,7 +585,7 @@ File: dvipsnam.def 2016/06/17 v3.0m Driver-dependent file (DPC,SPQR)
 LaTeX Warning: Unused global option(s):
     [report].
 
-No file ALGO-portfolio.aux.
+(./ALGO-portfolio.aux)
 \openout1 = `ALGO-portfolio.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 32.
@@ -624,7 +623,7 @@ Package microtype Info: Patching command `\showhyphens'.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
-(/Users/hereugo/Library/TinyTeX/texmf-dist/tex/latex/microtype/mt-cmr.cfg
+ (/Users/hereugo/Library/TinyTeX/texmf-dist/tex/latex/microtype/mt-cmr.cfg
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman (RS)
 ) (/Users/hereugo/Library/TinyTeX/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -632,7 +631,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
  (/Users/hereugo/Library/TinyTeX/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:32: Undefined control sequence.
+! Undefined control sequence.
 \__hook begindocument ...fter {\bbl@main@language 
                                                   }\ifbbl@single \renewcomma...
 l.32 \begin{document}
@@ -645,7 +644,7 @@ and I'll forget about whatever was undefined.
 
 Runaway argument?
 \@m \let \normalsfcodes \frenchspacing \else \let \normalsfcodes \nonfrenchspacing \ETC.
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:34: Paragraph ended before \bbl@tempe was complete.
+! Paragraph ended before \bbl@tempe was complete.
 <to be read again> 
                    \par 
 l.34 
@@ -654,7 +653,7 @@ I suspect you've forgotten a `}', causing me to apply this
 control sequence to too much text. How can we recover?
 My plan is to forget the whole thing and hope for the best.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:37: Use of \bbl@select@s doesn't match its definition.
+! Use of \bbl@select@s doesn't match its definition.
 \new@ifnextchar ...served@d = #1\def \reserved@a {
                                                   #2}\def \reserved@b {#3}\f...
 l.37 \section
@@ -664,7 +663,7 @@ put `1' after `\a', since control sequence names are
 made up of letters only. The macro here has not been
 followed by the required stuff, so I'm ignoring it.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:37: Use of \bbl@select@s doesn't match its definition.
+! Use of \bbl@select@s doesn't match its definition.
 <argument> \def \reserved@a *
                              {\@ssect {\z@ }{-3.5ex \@plus -1ex \@minus -.2e...
 l.37 \section
@@ -674,7 +673,7 @@ put `1' after `\a', since control sequence names are
 made up of letters only. The macro here has not been
 followed by the required stuff, so I'm ignoring it.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:37: Argument of \@ssect has an extra }.
+! Argument of \@ssect has an extra }.
 <inserted text> 
                 \par 
 l.37 \section
@@ -687,7 +686,7 @@ argument that might be the root of the problem. But if
 your `}' was spurious, just type `2' and it will go away.
 
 Runaway argument?
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:37: Paragraph ended before \@ssect was complete.
+! Paragraph ended before \@ssect was complete.
 <to be read again> 
                    \par 
 l.37 \section
@@ -696,7 +695,7 @@ I suspect you've forgotten a `}', causing me to apply this
 control sequence to too much text. How can we recover?
 My plan is to forget the whole thing and hope for the best.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:37: Use of \bbl@select@s doesn't match its definition.
+! Use of \bbl@select@s doesn't match its definition.
 \new@ifnextchar ...ved@d = #1\def \reserved@a {#2}
                                                   \def \reserved@b {#3}\futu...
 l.37 \section
@@ -708,7 +707,7 @@ followed by the required stuff, so I'm ignoring it.
 
 Runaway argument?
 {l@}\edef \bbl@tempd {\noexpand \@ifundefined {\noexpand \bbl@tempe \languagename \ETC.
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:42: Paragraph ended before \bbl@tempe was complete.
+! Paragraph ended before \bbl@tempe was complete.
 <to be read again> 
                    \par 
 l.42 
@@ -717,7 +716,7 @@ I suspect you've forgotten a `}', causing me to apply this
 control sequence to too much text. How can we recover?
 My plan is to forget the whole thing and hope for the best.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:45: Use of \bbl@select@s doesn't match its definition.
+! Use of \bbl@select@s doesn't match its definition.
 \new@ifnextchar ...served@d = #1\def \reserved@a {
                                                   #2}\def \reserved@b {#3}\f...
 l.45 \subparagraph
@@ -727,7 +726,7 @@ put `1' after `\a', since control sequence names are
 made up of letters only. The macro here has not been
 followed by the required stuff, so I'm ignoring it.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:45: Use of \bbl@select@s doesn't match its definition.
+! Use of \bbl@select@s doesn't match its definition.
 <argument> \def \reserved@a *
                              {\@ssect {\z@ }{3.25ex \@plus 1ex \@minus .2ex}...
 l.45 \subparagraph
@@ -737,7 +736,7 @@ put `1' after `\a', since control sequence names are
 made up of letters only. The macro here has not been
 followed by the required stuff, so I'm ignoring it.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:45: Argument of \@ssect has an extra }.
+! Argument of \@ssect has an extra }.
 <inserted text> 
                 \par 
 l.45 \subparagraph
@@ -750,7 +749,7 @@ argument that might be the root of the problem. But if
 your `}' was spurious, just type `2' and it will go away.
 
 Runaway argument?
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:45: Paragraph ended before \@ssect was complete.
+! Paragraph ended before \@ssect was complete.
 <to be read again> 
                    \par 
 l.45 \subparagraph
@@ -759,7 +758,7 @@ I suspect you've forgotten a `}', causing me to apply this
 control sequence to too much text. How can we recover?
 My plan is to forget the whole thing and hope for the best.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:45: Use of \bbl@select@s doesn't match its definition.
+! Use of \bbl@select@s doesn't match its definition.
 \new@ifnextchar ...ved@d = #1\def \reserved@a {#2}
                                                   \def \reserved@b {#3}\futu...
 l.45 \subparagraph
@@ -771,7 +770,7 @@ followed by the required stuff, so I'm ignoring it.
 
 Runaway argument?
 {l@}\edef \bbl@tempd {\noexpand \@ifundefined {\noexpand \bbl@tempe \languagename \ETC.
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:51: Paragraph ended before \bbl@tempe was complete.
+! Paragraph ended before \bbl@tempe was complete.
 <to be read again> 
                    \par 
 l.51 
@@ -780,7 +779,7 @@ I suspect you've forgotten a `}', causing me to apply this
 control sequence to too much text. How can we recover?
 My plan is to forget the whole thing and hope for the best.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:52: Use of \bbl@select@s doesn't match its definition.
+! Use of \bbl@select@s doesn't match its definition.
 \text@command #1->\edef \reserved@a {
                                      \unexpanded {#1}}\ifx \reserved@a \@emp...
 l.52 BEPs are organized in \emph{circles}
@@ -790,7 +789,7 @@ put `1' after `\a', since control sequence names are
 made up of letters only. The macro here has not been
 followed by the required stuff, so I'm ignoring it.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:52: Too many }'s.
+! Too many }'s.
 <recently read> \egroup 
                         
 l.52 BEPs are organized in \emph{circles}
@@ -853,7 +852,7 @@ Overfull \hbox (17.92734pt too wide) in paragraph at lines 88--111
 [] 
  []
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:117: Undefined control sequence.
+! Undefined control sequence.
 \hyper@linkurl ...tionraw >>}\relax \Hy@colorlink 
                                                   \@urlcolor #1\Hy@xspace@en...
 l.117 ...Overleaf (\url{https://www.overleaf.com/}
@@ -873,7 +872,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:117: Undefined control sequence.
+! Undefined control sequence.
 \close@pdflink ->\Hy@endcolorlink 
                                   \Hy@VerboseLinkStop \pdfendlink 
 l.117 ...Overleaf (\url{https://www.overleaf.com/}
@@ -887,7 +886,7 @@ and I'll forget about whatever was undefined.
 [1.1{/Users/hereugo/Library/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/Users/hereugo/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}
 
 ]
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:131: Undefined control sequence.
+! Undefined control sequence.
 \hyper@linkurl ...tionraw >>}\relax \Hy@colorlink 
                                                   \@urlcolor #1\Hy@xspace@en...
 l.131 ...\url{https://gitlab.tue.nl/users/sign_in}
@@ -898,7 +897,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:131: Undefined control sequence.
+! Undefined control sequence.
 \close@pdflink ->\Hy@endcolorlink 
                                   \Hy@VerboseLinkStop \pdfendlink 
 l.131 ...\url{https://gitlab.tue.nl/users/sign_in}
@@ -912,7 +911,7 @@ and I'll forget about whatever was undefined.
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/lmr/m/sc/10'.
 (microtype)             Ignoring protrusion settings for this character.
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:175: Undefined control sequence.
+! Undefined control sequence.
 <argument> {\CT@arc@ 
                      \vline }
 l.175 \begin{tabular}{c|r|l|l|l}
@@ -923,7 +922,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:175: Undefined control sequence.
+! Undefined control sequence.
 <argument> {\CT@arc@ 
                      \vline }
 l.175 \begin{tabular}{c|r|l|l|l}
@@ -934,7 +933,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:175: Undefined control sequence.
+! Undefined control sequence.
 <argument> {\CT@arc@ 
                      \vline }
 l.175 \begin{tabular}{c|r|l|l|l}
@@ -945,7 +944,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:175: Undefined control sequence.
+! Undefined control sequence.
 <argument> {\CT@arc@ 
                      \vline }
 l.175 \begin{tabular}{c|r|l|l|l}
@@ -956,7 +955,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:176: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.176 quartile &
@@ -967,7 +966,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:176: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.176 quartile & week &
@@ -978,7 +977,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:176: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.176 quartile & week & dates &
@@ -989,7 +988,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:176: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.176 quartile & week & dates & meetings &
@@ -1000,7 +999,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:177: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.177 \hline
@@ -1011,7 +1010,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:177: Undefined control sequence.
+! Undefined control sequence.
 \hline ... \hrule \let \@width \@height {\CT@arc@ 
                                                   \vline }\futurelet \reserv...
 l.177 \hline
@@ -1022,7 +1021,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:178: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.178 Q3  &
@@ -1033,7 +1032,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:178: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.178 Q3  & 1 &
@@ -1044,7 +1043,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:178: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.178 Q3  & 1 & Feb 2--6 &
@@ -1055,7 +1054,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:178: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.178 Q3  & 1 & Feb 2--6 & Kickoff meeting &
@@ -1066,7 +1065,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:179: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.179 \graycline
@@ -1077,7 +1076,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:180: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.180     &
@@ -1088,7 +1087,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:180: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.180     & 2 &
@@ -1099,7 +1098,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:180: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.180     & 2 & Feb 9--13 &
@@ -1110,7 +1109,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:180: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.180     & 2 & Feb 9--13 & Circle meeting &
@@ -1121,7 +1120,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:181: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.181 \graycline
@@ -1132,7 +1131,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:182: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.182     &
@@ -1143,7 +1142,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:184: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.184     &
@@ -1154,7 +1153,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:184: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.184     & 3 &
@@ -1165,7 +1164,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:184: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.184     & 3 & Feb 23--27 &
@@ -1176,7 +1175,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:184: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.184     & 3 & Feb 23--27 &  &
@@ -1187,7 +1186,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:185: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.185 \graycline
@@ -1198,7 +1197,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:186: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.186     &
@@ -1209,7 +1208,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:186: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.186     & 4 &
@@ -1220,7 +1219,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:186: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.186     & 4 & March 2--6 &
@@ -1231,7 +1230,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:186: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.186     & 4 & March 2--6 & Circle meeting &
@@ -1242,7 +1241,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:187: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.187 \graycline
@@ -1253,7 +1252,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:188: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.188     &
@@ -1264,7 +1263,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:188: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.188     & 5 &
@@ -1275,7 +1274,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:188: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.188     & 5 &  Mar 9--13 &
@@ -1286,7 +1285,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:188: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.188     & 5 &  Mar 9--13 &  &
@@ -1297,7 +1296,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:189: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.189 \graycline
@@ -1308,7 +1307,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:190: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.190     &
@@ -1319,7 +1318,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:190: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.190     & 6 &
@@ -1330,7 +1329,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:190: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.190     & 6 & Mar 16--20 &
@@ -1341,7 +1340,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:190: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.190     & 6 & Mar 16--20 &  &
@@ -1352,7 +1351,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:191: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.191 \graycline
@@ -1363,7 +1362,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:192: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.192     &
@@ -1374,7 +1373,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:192: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.192     & 7 &
@@ -1385,7 +1384,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:192: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.192     & 7 & Mar 23--27 &
@@ -1396,7 +1395,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:192: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.192     & 7 & Mar 23--27 & Circle meeting &
@@ -1407,7 +1406,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:193: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.193 \graycline
@@ -1418,7 +1417,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:194: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.194     &
@@ -1429,7 +1428,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:194: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.194     & 8 &
@@ -1440,7 +1439,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:194: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.194     & 8 & Mar 30 -- Apr 3 &
@@ -1451,7 +1450,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:194: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.194     & 8 & Mar 30 -- Apr 3 &  &
@@ -1462,7 +1461,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:195: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.195 \graycline
@@ -1473,7 +1472,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:196: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.196     &
@@ -1484,7 +1483,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:196: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.196     & 9 &
@@ -1495,7 +1494,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:196: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.196     & 9 & Apr 6--10 &
@@ -1506,7 +1505,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:196: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.196     & 9 & Apr 6--10 & \emph{Exam week} &
@@ -1517,7 +1516,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:197: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.197 \graycline
@@ -1528,7 +1527,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:198: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.198     &
@@ -1539,7 +1538,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:198: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.198     & 10 &
@@ -1550,7 +1549,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:198: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.198     & 10 & Apr 13--17 &
@@ -1561,7 +1560,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:200: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.200 Q4  &
@@ -1572,7 +1571,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:200: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.200 Q4  & 1 &
@@ -1583,7 +1582,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:200: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.200 Q4  & 1 & Apr 20--24 &
@@ -1594,7 +1593,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:200: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.200 Q4  & 1 & Apr 20--24 & Circle meeting &
@@ -1605,7 +1604,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:201: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.201 \graycline
@@ -1616,7 +1615,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:202: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.202     &
@@ -1627,7 +1626,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:202: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.202     & 2 &
@@ -1638,7 +1637,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:202: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.202     & 2 & Apr 27 -- May 1 &
@@ -1649,7 +1648,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:202: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.202     & 2 & Apr 27 -- May 1 &  &
@@ -1660,7 +1659,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:203: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.203 \graycline
@@ -1671,7 +1670,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:204: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.204     &
@@ -1682,7 +1681,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:204: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.204     & 3 &
@@ -1693,7 +1692,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:204: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.204     & 3 & May 4--8 &
@@ -1704,7 +1703,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:204: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.204     & 3 & May 4--8 &  &
@@ -1715,7 +1714,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:205: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.205 \graycline
@@ -1726,7 +1725,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:206: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.206     &
@@ -1737,7 +1736,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:206: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.206     & 4 &
@@ -1748,7 +1747,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:206: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.206     & 4 & May 11--15 &
@@ -1759,7 +1758,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:206: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.206     & 4 & May 11--15 & Circle meeting &
@@ -1770,7 +1769,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:207: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.207 \graycline
@@ -1781,7 +1780,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:208: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.208     &
@@ -1792,7 +1791,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:208: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.208     & 5 &
@@ -1803,7 +1802,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:208: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.208     & 5 & May 18--22 &
@@ -1814,7 +1813,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:208: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.208     & 5 & May 18--22 &  &
@@ -1825,7 +1824,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:209: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.209 \graycline
@@ -1836,7 +1835,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:210: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.210     &
@@ -1847,7 +1846,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:210: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.210     & 6 &
@@ -1858,7 +1857,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:210: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.210     & 6 & May 25--29 &
@@ -1869,7 +1868,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:210: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.210     & 6 & May 25--29 &  &
@@ -1880,7 +1879,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:211: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.211 \graycline
@@ -1891,7 +1890,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:212: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.212     &
@@ -1902,7 +1901,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:212: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.212     & 7 &
@@ -1913,7 +1912,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:212: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.212     & 7 & Jun 1--5 &
@@ -1924,7 +1923,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:212: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.212     & 7 & Jun 1--5 &  &
@@ -1935,7 +1934,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:213: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.213 \graycline
@@ -1946,7 +1945,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:214: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.214     &
@@ -1957,7 +1956,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:214: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.214     & 8 &
@@ -1968,7 +1967,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:214: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.214     & 8 & Jun 8--12  &
@@ -1979,7 +1978,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:214: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.214     & 8 & Jun 8--12  & Circle meeting &
@@ -1990,7 +1989,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:215: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.215 \graycline
@@ -2001,7 +2000,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:216: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.216     &
@@ -2012,7 +2011,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:216: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.216     & 9 &
@@ -2023,7 +2022,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:216: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.216     & 9 & Jun 15--19  &
@@ -2034,7 +2033,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:216: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.216     & 9 & Jun 15--19  &  &
@@ -2045,7 +2044,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:217: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.217 \cline
@@ -2056,7 +2055,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:218: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.218     &
@@ -2067,7 +2066,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:218: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.218     & 10 &
@@ -2078,7 +2077,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:218: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.218     & 10 & Jun 22--26 &
@@ -2089,7 +2088,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:219: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.219     &
@@ -2100,7 +2099,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:219: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.219     & 11 &
@@ -2111,7 +2110,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:219: Undefined control sequence.
+! Undefined control sequence.
 <template> ...@setup \CT@row@color \CT@cell@color 
                                                   \CT@do@color \endgroup \@t...
 l.219     & 11 & Jun 29 -- Jul 3 &
@@ -2131,7 +2130,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [2.2] [3.3]
 Runaway argument?
 {\protect \foreignlanguage {}\edef english{english}\begingroup \def 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:251: Paragraph ended before \org@markboth was complete.
+! Paragraph ended before \org@markboth was complete.
 <to be read again> 
                    \par 
 l.251 \newpage
@@ -2140,7 +2139,7 @@ I suspect you've forgotten a `}', causing me to apply this
 control sequence to too much text. How can we recover?
 My plan is to forget the whole thing and hope for the best.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:251: Missing control sequence inserted.
+! Missing control sequence inserted.
 <inserted text> 
                 \inaccessible 
 l.251 \newpage
@@ -2151,7 +2150,7 @@ definition will be completed without mixing me up too badly.
 You can recover graciously from this error, if you're
 careful; see exercise 27.2 in The TeXbook.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:251: Missing control sequence inserted.
+! Missing control sequence inserted.
 <inserted text> 
                 \inaccessible 
 l.251 \newpage
@@ -2162,7 +2161,7 @@ definition will be completed without mixing me up too badly.
 You can recover graciously from this error, if you're
 careful; see exercise 27.2 in The TeXbook.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:251: Missing control sequence inserted.
+! Missing control sequence inserted.
 <inserted text> 
                 \inaccessible 
 l.251 \newpage
@@ -2173,7 +2172,7 @@ definition will be completed without mixing me up too badly.
 You can recover graciously from this error, if you're
 careful; see exercise 27.2 in The TeXbook.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:251: Missing control sequence inserted.
+! Missing control sequence inserted.
 <inserted text> 
                 \inaccessible 
 l.251 \newpage
@@ -2184,7 +2183,7 @@ definition will be completed without mixing me up too badly.
 You can recover graciously from this error, if you're
 careful; see exercise 27.2 in The TeXbook.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:251: Extra }, or forgotten \endgroup.
+! Extra }, or forgotten \endgroup.
 \bbl@exp@aux ...ubtitleseperator \@subtitle \fi }}
                                                   {\protect \foreignlanguage...
 l.251 \newpage
@@ -2197,7 +2196,7 @@ deleted material, e.g., by typing `I$}'.
 
 Runaway argument?
 {\def \reserved@a *{\bbl@foreign@s }\reserved@a }\def \reserved@b {\bbl@foreign@x \ETC.
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:251: Paragraph ended before \reserved@a was complete.
+! Paragraph ended before \reserved@a was complete.
 <to be read again> 
                    \par 
 l.251 \newpage
@@ -2206,7 +2205,7 @@ I suspect you've forgotten a `}', causing me to apply this
 control sequence to too much text. How can we recover?
 My plan is to forget the whole thing and hope for the best.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:251: Missing control sequence inserted.
+! Missing control sequence inserted.
 <inserted text> 
                 \inaccessible 
 l.251 \newpage
@@ -2217,7 +2216,7 @@ definition will be completed without mixing me up too badly.
 You can recover graciously from this error, if you're
 careful; see exercise 27.2 in The TeXbook.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:251: Missing control sequence inserted.
+! Missing control sequence inserted.
 <inserted text> 
                 \inaccessible 
 l.251 \newpage
@@ -2228,7 +2227,7 @@ definition will be completed without mixing me up too badly.
 You can recover graciously from this error, if you're
 careful; see exercise 27.2 in The TeXbook.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:251: Missing control sequence inserted.
+! Missing control sequence inserted.
 <inserted text> 
                 \inaccessible 
 l.251 \newpage
@@ -2239,7 +2238,7 @@ definition will be completed without mixing me up too badly.
 You can recover graciously from this error, if you're
 careful; see exercise 27.2 in The TeXbook.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:251: Missing control sequence inserted.
+! Missing control sequence inserted.
 <inserted text> 
                 \inaccessible 
 l.251 \newpage
@@ -2250,7 +2249,7 @@ definition will be completed without mixing me up too badly.
 You can recover graciously from this error, if you're
 careful; see exercise 27.2 in The TeXbook.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:251: Extra }, or forgotten \endgroup.
+! Extra }, or forgotten \endgroup.
 \bbl@exp@aux ...ubtitleseperator \@subtitle \fi }}
                                                   
 l.251 \newpage
@@ -2261,7 +2260,7 @@ you forgot something else, as in `\hbox{$x}'. In such cases
 the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:251: Extra }, or forgotten \endgroup.
+! Extra }, or forgotten \endgroup.
 \@titlerunning ...titleseperator \@subtitle \fi }}
                                                   
 l.251 \newpage
@@ -2272,7 +2271,7 @@ you forgot something else, as in `\hbox{$x}'. In such cases
 the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:251: Undefined control sequence.
+! Undefined control sequence.
 \bbl@exp ...\let \[\bbl@exp@ue \edef \bbl@exp@aux 
                                                   {\endgroup #1}\bbl@exp@aux 
 l.251 \newpage
@@ -2283,7 +2282,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:251: Missing } inserted.
+! Missing } inserted.
 <inserted text> 
                 }
 l.251 \newpage
@@ -2294,7 +2293,7 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:251: Argument of \reserved@a has an extra }.
+! Argument of \reserved@a has an extra }.
 <inserted text> 
                 \par 
 l.251 \newpage
@@ -2308,7 +2307,7 @@ your `}' was spurious, just type `2' and it will go away.
 
 Runaway argument?
 {\def \reserved@a *{\let \reserved@e \vadjust \let \reserved@f \nobreak \ETC.
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:251: Paragraph ended before \reserved@a was complete.
+! Paragraph ended before \reserved@a was complete.
 <to be read again> 
                    \par 
 l.251 \newpage
@@ -2317,7 +2316,7 @@ I suspect you've forgotten a `}', causing me to apply this
 control sequence to too much text. How can we recover?
 My plan is to forget the whole thing and hope for the best.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:251: Extra }, or forgotten \endgroup.
+! Extra }, or forgotten \endgroup.
 <recently read> }
                  
 l.251 \newpage
@@ -2328,7 +2327,7 @@ you forgot something else, as in `\hbox{$x}'. In such cases
 the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:251: Undefined control sequence.
+! Undefined control sequence.
 \bbl@exp ...bl@exp@aux {\endgroup #1}\bbl@exp@aux 
                                                   
 l.251 \newpage
@@ -2339,7 +2338,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:251: Undefined control sequence.
+! Undefined control sequence.
 MT@split@name ...3/#4/#5/#6@nil ->def MT@encoding 
                                                   {#1}ifMT@fontspec edef MT@...
 l.251 \newpage
@@ -2350,7 +2349,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:251: Undefined control sequence.
+! Undefined control sequence.
 MT@split@name ...re #2()relax }else def MT@family 
                                                   {#2}fi def MT@series {#3}d...
 l.251 \newpage
@@ -2361,7 +2360,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:251: Undefined control sequence.
+! Undefined control sequence.
 MT@split@name ...f MT@family {#2}fi def MT@series 
                                                   {#3}def MT@shape {#4}def M...
 l.251 \newpage
@@ -2372,7 +2371,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:251: Undefined control sequence.
+! Undefined control sequence.
 MT@split@name ...i def MT@series {#3}def MT@shape 
                                                   {#4}def MT@size {#5}MT@fix...
 l.251 \newpage
@@ -2383,7 +2382,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:251: Undefined control sequence.
+! Undefined control sequence.
 MT@split@name ...{#3}def MT@shape {#4}def MT@size 
                                                   {#5}MT@fix@fontdimen@six M...
 l.251 \newpage
@@ -2394,7 +2393,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:251: Undefined control sequence.
+! Undefined control sequence.
 MT@fix@fontdimen@six ...pty }fi edef MT@dimen@six 
                                                   {number fontdimen 6MT@font }
 l.251 \newpage
@@ -2405,7 +2404,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:251: Undefined control sequence.
+! Undefined control sequence.
 <argument> MT@MT@family 
                         @alias
 l.251 \newpage
@@ -2416,7 +2415,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:251: Undefined control sequence.
+! Undefined control sequence.
 <argument> MT@family 
                      
 l.251 \newpage
@@ -2429,7 +2428,7 @@ and I'll forget about whatever was undefined.
 
 Runaway argument?
 ##1,,##2##3@nnil {ifx ##2@empty MT@inlist@false else MT@inlist@true fi ETC.
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:251: Paragraph ended before MT@res@a was complete.
+! Paragraph ended before MT@res@a was complete.
 <to be read again> 
                    par 
 l.251 \newpage
@@ -2438,7 +2437,7 @@ I suspect you've forgotten a `}', causing me to apply this
 control sequence to too much text. How can we recover?
 My plan is to forget the whole thing and hope for the best.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:251: Extra }, or forgotten endgroup.
+! Extra }, or forgotten endgroup.
 @maketitle ...athversion {bold}@subtitle }fi par }
                                                   vskip 1em ifx @author orig...
 l.251 \newpage
@@ -2449,7 +2448,7 @@ you forgot something else, as in `\hbox{$x}'. In such cases
 the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:251: Undefined control sequence.
+! Undefined control sequence.
 MT@split@name ...3/#4/#5/#6@nil ->def MT@encoding 
                                                   {#1}ifMT@fontspec edef MT@...
 l.251 \newpage
@@ -2460,7 +2459,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:251: Undefined control sequence.
+! Undefined control sequence.
 MT@split@name ...re #2()relax }else def MT@family 
                                                   {#2}fi def MT@series {#3}d...
 l.251 \newpage
@@ -2471,7 +2470,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:251: Undefined control sequence.
+! Undefined control sequence.
 MT@split@name ...f MT@family {#2}fi def MT@series 
                                                   {#3}def MT@shape {#4}def M...
 l.251 \newpage
@@ -2482,7 +2481,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:251: Undefined control sequence.
+! Undefined control sequence.
 MT@split@name ...i def MT@series {#3}def MT@shape 
                                                   {#4}def MT@size {#5}MT@fix...
 l.251 \newpage
@@ -2493,7 +2492,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:251: Undefined control sequence.
+! Undefined control sequence.
 MT@split@name ...{#3}def MT@shape {#4}def MT@size 
                                                   {#5}MT@fix@fontdimen@six M...
 l.251 \newpage
@@ -2504,7 +2503,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:251: Undefined control sequence.
+! Undefined control sequence.
 MT@fix@fontdimen@six ...pty }fi edef MT@dimen@six 
                                                   {number fontdimen 6MT@font }
 l.251 \newpage
@@ -2515,7 +2514,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:251: Undefined control sequence.
+! Undefined control sequence.
 <argument> MT@MT@family 
                         @alias
 l.251 \newpage
@@ -2526,7 +2525,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:251: Undefined control sequence.
+! Undefined control sequence.
 <argument> MT@family 
                      
 l.251 \newpage
@@ -2537,7 +2536,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:251: Argument of MT@res@a has an extra }.
+! Argument of MT@res@a has an extra }.
 <inserted text> 
                 par 
 l.251 \newpage
@@ -2551,7 +2550,7 @@ your `}' was spurious, just type `2' and it will go away.
 
 Runaway argument?
 ##1,,##2##3@nnil {ifx ##2@empty MT@inlist@false else MT@inlist@true fi ETC.
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:251: Paragraph ended before MT@res@a was complete.
+! Paragraph ended before MT@res@a was complete.
 <to be read again> 
                    par 
 l.251 \newpage
@@ -2560,7 +2559,7 @@ I suspect you've forgotten a `}', causing me to apply this
 control sequence to too much text. How can we recover?
 My plan is to forget the whole thing and hope for the best.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:251: Extra }, or forgotten endgroup.
+! Extra }, or forgotten endgroup.
 <recently read> }
                  
 l.251 \newpage
@@ -2575,7 +2574,7 @@ deleted material, e.g., by typing `I$}'.
 
 Runaway argument?
 {@xfootnotemark }def reserved@b {stepcounter {footnote}protected@xdef ETC.
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:251: Paragraph ended before reserved@a was complete.
+! Paragraph ended before reserved@a was complete.
 <to be read again> 
                    par 
 l.251 \newpage
@@ -2584,7 +2583,7 @@ I suspect you've forgotten a `}', causing me to apply this
 control sequence to too much text. How can we recover?
 My plan is to forget the whole thing and hope for the best.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:251: Argument of reserved@a has an extra }.
+! Argument of reserved@a has an extra }.
 <inserted text> 
                 par 
 l.251 \newpage
@@ -2598,7 +2597,7 @@ your `}' was spurious, just type `2' and it will go away.
 
 Runaway argument?
 {endgroup write @auxout {string def string @LN@column {if@firstcolumn ETC.
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:251: Paragraph ended before reserved@a was complete.
+! Paragraph ended before reserved@a was complete.
 <to be read again> 
                    par 
 l.251 \newpage
@@ -2607,7 +2606,7 @@ I suspect you've forgotten a `}', causing me to apply this
 control sequence to too much text. How can we recover?
 My plan is to forget the whole thing and hope for the best.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:251: Extra }, or forgotten endgroup.
+! Extra }, or forgotten endgroup.
 <recently read> }
                  
 l.251 \newpage
@@ -2618,7 +2617,7 @@ you forgot something else, as in `\hbox{$x}'. In such cases
 the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:251: Argument of @gobble has an extra }.
+! Argument of @gobble has an extra }.
 <inserted text> 
                 par 
 l.251 \newpage
@@ -2631,7 +2630,7 @@ argument that might be the root of the problem. But if
 your `}' was spurious, just type `2' and it will go away.
 
 Runaway argument?
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:251: Paragraph ended before @gobble was complete.
+! Paragraph ended before @gobble was complete.
 <to be read again> 
                    par 
 l.251 \newpage
@@ -2640,7 +2639,7 @@ I suspect you've forgotten a `}', causing me to apply this
 control sequence to too much text. How can we recover?
 My plan is to forget the whole thing and hope for the best.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:251: Argument of @gobble has an extra }.
+! Argument of @gobble has an extra }.
 <inserted text> 
                 par 
 l.251 \newpage
@@ -2653,7 +2652,7 @@ argument that might be the root of the problem. But if
 your `}' was spurious, just type `2' and it will go away.
 
 Runaway argument?
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:251: Paragraph ended before @gobble was complete.
+! Paragraph ended before @gobble was complete.
 <to be read again> 
                    par 
 l.251 \newpage
@@ -2662,7 +2661,7 @@ I suspect you've forgotten a `}', causing me to apply this
 control sequence to too much text. How can we recover?
 My plan is to forget the whole thing and hope for the best.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:251: Argument of reserved@a has an extra }.
+! Argument of reserved@a has an extra }.
 <inserted text> 
                 par 
 l.251 \newpage
@@ -2676,7 +2675,7 @@ your `}' was spurious, just type `2' and it will go away.
 
 Runaway argument?
 {refstepcounter@optarg }def reserved@b {refstepcounter@noarg }futurelet ETC.
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:251: Paragraph ended before reserved@a was complete.
+! Paragraph ended before reserved@a was complete.
 <to be read again> 
                    par 
 l.251 \newpage
@@ -2685,7 +2684,7 @@ I suspect you've forgotten a `}', causing me to apply this
 control sequence to too much text. How can we recover?
 My plan is to forget the whole thing and hope for the best.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:251: Extra }, or forgotten endgroup.
+! Extra }, or forgotten endgroup.
 <recently read> }
                  
 l.251 \newpage
@@ -2696,14 +2695,14 @@ you forgot something else, as in `\hbox{$x}'. In such cases
 the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:251: Extra else.
+! Extra else.
 <output> ...ist else LineNoLaTeXOutput fi fi else 
                                                   MakeLineNo fi }
 l.251 \newpage
               
 I'm ignoring this; it doesn't match any \if.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:251: You can't use `prevdepth' in horizontal mode.
+! You can't use `prevdepth' in horizontal mode.
 nointerlineskip ->prevdepth 
                             -@m p@ 
 l.251 \newpage
@@ -2713,7 +2712,7 @@ I'll just pretend that you didn't ask for it.
 If you're in the wrong mode, you might be able to
 return to the right one by typing `I}' or `I$' or `I\par'.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:251: Missing $ inserted.
+! Missing $ inserted.
 <inserted text> 
                 $
 l.251 \newpage
@@ -2721,7 +2720,7 @@ l.251 \newpage
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:251: Missing $ inserted.
+! Missing $ inserted.
 <inserted text> 
                 $
 l.251 \newpage
@@ -2729,7 +2728,7 @@ l.251 \newpage
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:251: Undefined control sequence.
+! Undefined control sequence.
 get@external@font ...l@font @empty edef font@info 
                                                   {expandafter expandafter e...
 l.251 \newpage
@@ -2740,7 +2739,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:251: Undefined control sequence.
+! Undefined control sequence.
 try@size@range ...extract@rangefontinfo font@info 
                                                   <-*>@nil <@nnil 
 l.251 \newpage
@@ -2751,7 +2750,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:251: Argument of reserved@a has an extra }.
+! Argument of reserved@a has an extra }.
 <inserted text> 
                 par 
 l.251 \newpage
@@ -2765,7 +2764,7 @@ your `}' was spurious, just type `2' and it will go away.
 
 Runaway argument?
 {@nil }ifx reserved@a @nnil expandafter @gobble else expandafter @firstofone ETC.
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:251: Paragraph ended before reserved@a was complete.
+! Paragraph ended before reserved@a was complete.
 <to be read again> 
                    par 
 l.251 \newpage
@@ -2774,7 +2773,7 @@ I suspect you've forgotten a `}', causing me to apply this
 control sequence to too much text. How can we recover?
 My plan is to forget the whole thing and hope for the best.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:251: Extra }, or forgotten endgroup.
+! Extra }, or forgotten endgroup.
 <recently read> }
                  
 l.251 \newpage
@@ -2785,7 +2784,7 @@ you forgot something else, as in `\hbox{$x}'. In such cases
 the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:251: Emergency stop.
+! Emergency stop.
 <output> ...LaTeXOutput fi fi else MakeLineNo fi }
                                                   
 l.251 \newpage
@@ -2794,11 +2793,11 @@ Unbalanced output routine
 
  
 Here is how much of TeX's memory you used:
- 21665 strings out of 469339
- 371778 string characters out of 5465690
+ 21667 strings out of 469339
+ 371744 string characters out of 5465690
  897364 words of memory out of 5000000
- 50074 multiletter control sequences out of 15000+600000
+ 50075 multiletter control sequences out of 15000+600000
  679735 words of font info for 123 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 78i,9n,84p,1046b,551s stack positions out of 10000i,1000n,20000p,200000b,200000s
-/Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex:251:  ==> Fatal error occurred, no output PDF file produced!
+ 78i,9n,84p,1011b,551s stack positions out of 10000i,1000n,20000p,200000b,200000s
+!  ==> Fatal error occurred, no output PDF file produced!

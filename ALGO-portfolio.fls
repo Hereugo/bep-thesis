@@ -2,7 +2,7 @@ PWD /Users/hereugo/projects/bep/thesis
 INPUT /Users/hereugo/Library/TinyTeX/texmf.cnf
 INPUT /Users/hereugo/Library/TinyTeX/texmf-dist/web2c/texmf.cnf
 INPUT /Users/hereugo/Library/TinyTeX/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT /Users/hereugo/projects/bep/thesis/ALGO-portfolio.tex
+INPUT ALGO-portfolio.tex
 OUTPUT ALGO-portfolio.log
 INPUT ./lipics-v2021.cls
 INPUT lipics-v2021.cls
@@ -213,6 +213,9 @@ INPUT /Users/hereugo/Library/TinyTeX/texmf-dist/tex/latex/graphics/mathcolor.ltx
 INPUT /Users/hereugo/Library/TinyTeX/texmf-dist/tex/latex/graphics/dvipsnam.def
 INPUT /Users/hereugo/Library/TinyTeX/texmf-dist/tex/latex/graphics/dvipsnam.def
 INPUT /Users/hereugo/Library/TinyTeX/texmf-dist/tex/latex/graphics/dvipsnam.def
+INPUT ./ALGO-portfolio.aux
+INPUT ./ALGO-portfolio.aux
+INPUT ALGO-portfolio.aux
 OUTPUT ALGO-portfolio.aux
 INPUT /Users/hereugo/Library/TinyTeX/texmf-dist/tex/latex/microtype/mt-cmr.cfg
 INPUT /Users/hereugo/Library/TinyTeX/texmf-dist/tex/latex/microtype/mt-cmr.cfg

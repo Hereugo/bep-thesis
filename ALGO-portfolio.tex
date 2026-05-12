@@ -471,7 +471,7 @@ Traveling Salesman Problem (TTSP) or the Orienteering Problem. In general, the
 TTSP is defined by:
 \begin{itemize}
 \item A set of candidate locations (e.g., delivery points), each associated with a profit or value.
-\item A hard constraint on the total distance (or time) of the tour, reflecting operational
+\item A hard constraint on the total distance (or time) of the tour, reflecting operational limits.
 \end{itemize}
 \\ \\
 This situation is by no means unique to delivery logistics. Similar
@@ -525,6 +525,33 @@ from the literature. Often this is done best using high-level (that is, not too 
 pseudocode plus a textual explanation. For algorithms from the literature, discuss with 
 your supervisor in how much detail they should be presented.}
 
+The implemented problem setting uses node~0 as the depot, while every other node
+has an associated reward value. Distances are Euclidean on the edges that are
+allowed by the instance, and an edge that is not present in the adjacency
+structure is treated as infeasible. A tour is therefore feasible only if every
+edge used by the tour exists and the total length of the closed tour, including
+the return to the depot, is at most the budget~$L$.
+
+As a first baseline, I implemented a greedy insertion heuristic that builds a
+tour incrementally. The algorithm starts with the trivial tour containing only
+the depot. In every iteration, it considers each node that is not yet in the
+tour and tests all possible insertion positions between two consecutive tour
+vertices $a$ and $b$. For a candidate node $v$, the additional travel cost of
+inserting $v$ between $a$ and $b$ is computed as
+$d(a,v)+d(v,b)-d(a,b)$. For each node, the algorithm keeps only the insertion
+position with minimum additional cost, and then assigns the node a score equal
+to its reward divided by this cost. After that, the algorithm simulates the
+corresponding insertion and checks whether the resulting closed tour is still
+feasible with respect to the budget~$L$. Among all feasible candidates, it
+selects the node with the highest reward-to-cost ratio, inserts it at the best
+position, and repeats this process until no further feasible insertion exists.
+
+The purpose of this heuristic is to provide a fast constructive method that
+balances the benefit of visiting a node against the extra travel needed to
+include it in the tour. At the same time, the method is inherently myopic,
+because every decision is based only on the current tour and the locally best
+insertion score. Consequently, it serves as a practical baseline, but it does
+not guarantee an optimal solution.
 
 %-------------------------------------------------------------------------
 \subsection{Analysis of the algorithms}
