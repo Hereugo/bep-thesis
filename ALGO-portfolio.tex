@@ -446,14 +446,14 @@ TODO
 % from a purely scientific rather than an applied perspective.)
 % Make sure that your problem statement is unambiguous and clear.}
 
-Modern logistics networks increasingly demand efficient route planning
-under real-world operational constraints. Consider a courier operating
-a same-day delivery service: departing from a central depot, the vehicle
+Modern logistics networks increasingly demand in efficient route planning
+under real-world operational constraints~\cite{GRAZIASPERANZA2018830}. Consider a courier operating
+a same-day delivery service: departing from a depot, the vehicle
 must return before a hard deadline imposed by fuel capacity, battery
 limitations, or working-hour regulations. Because the number of
 potential delivery locations typically exceeds what can be served within
-these constraints, the dispatcher faces a combinatorial decision: which
-subset of customers to visit, and in what order, so as to maximise the
+these constraints, the dispatcher must make a decision: which
+subset of customers to visit, and in what order, so as to maximize the
 total collected value---whether measured in revenue, number of parcels,
 or customer priority score. In this setting, the selection of delivery points
 and the underlying routing problem is generally known as the \textbf{Time-Constrained 
@@ -467,15 +467,23 @@ TTSP is defined by:
 \end{itemize}
 
 This situation is by no means unique to delivery logistics. Similar
-trade-offs arise in autonomous vehicle routing~\cite{}, drone-based
-infrastructure inspection~\cite{}, and mobile tourist guidance~\cite{},
+trade-offs arise in autonomous vehicle routing~\cite{Karakostas2024}, drone-based data collection under flight-time constraints~\cite{Gaertner2022}, and mobile tourist guidance~\cite{Vansteenwegen2007},
 where a tour must be planned for a visitor who can only explore a subset
-of points of interest (POIs) within a limited time budget~\cite{Vansteenwegen2007}.
+of points of interest (POIs) within a limited time budget.
 In each case, the common behaviour is the same: a set of candidate
 locations, each carrying a profit, and a hard bound on the total
 distance (or time) of the tour.
 
-In the paper, .
+In this paper, we consider a graph-based version of the TTSP. The input is a
+weighted graph with a fixed depot and a reward value assigned to each candidate
+location, together with a hard upper bound~$L$ on the total length of the tour.
+The goal is to construct a closed tour that starts and ends at the depot,
+visits only a subset of the available locations, and maximizes the collected
+reward without exceeding the travel budget. Rather than focusing on an exact
+optimization formulation, this report studies heuristic approaches for this
+problem: a greedy insertion baseline, local-search improvements, and a genetic
+algorithm. The contribution of the work is an empirical comparison of these
+heuristic design choices for graph-based TTSP instances.
 
 The paper is structured as follows: \textbf{TODO}
 
