@@ -497,17 +497,18 @@ The paper is structured as follows: \textbf{TODO}
 % For example, a paper may study exactly the same problem as another paper but
 % obtain a better result, or they may study a more general version of the problem.}
 
-The TTSP is formalized and defined as follows: on a set of points in the
-Euclidean plane. Given an upper bound $L$ on the total length of the tour,
-each point in the input set $P \subset \mathbb{R}^2$ is assigned a 
-value of $v(p)$. The objective is to find a tour of total length at 
-most $L$ that visits a subset of points whose total value is maximized. This section
-introduces the different variants of the problem that have been defined in literature.
+The problem studied in this report belongs to the family of Orienteering
+Problem and TTSP variants. This section introduces the different variants 
+of the problem that have been defined in literature.
 
-For example Vansteenwegen et al.~\cite{} extends the basic model with practical attributes 
-such as points of interests (POI) opening hours and visit durations. \textbf{TODO Expand}
+Several application-oriented variants extend this basic model with additional
+constraints. For example, Sebastia and Marzal~\cite{MarzalSebastia2024} introduces the Team Orienteering Problem with Time Windows and Variable Profits (TOPTWVP), where each node carries a time window for service and a profit that depends on how long the vehicle spends there. Morandi et al.~\cite{MorandiLeusYaman2024} introduces the OP with multiple drones (OP-mD), where a truck and a fleet of battery-constrained drones cooperate to maximize collected prizes within a time budget. 
 
-Another variant defined by Sebastia and Marzal~\cite{} incorporate travel-style preferences into account. \textbf{TODO Expand}
+The literature also contains a wide range of heuristic approaches for these
+problems, since exact optimization quickly becomes computationally expensive on
+larger instances~\cite{Vansteenwegen2011}. This have motivated the empirical comparison in this report, which
+studies how different heuristic design choices perform on graph-based TTSP
+instances.
 
 \subparagraph{Contributions.}
 % \explanation{Give a summary of your work, and relate it to what is known in the literature.
@@ -518,7 +519,22 @@ Another variant defined by Sebastia and Marzal~\cite{} incorporate travel-style 
 % but the structure would be slightly different;
 % please discuss with your supervisor what is expected.}
 
-\textbf{TODO}
+The contribution of this thesis is an empirical study of heuristic design
+choices for the TTSP. The study focuses on how increasing heuristic complexity 
+affects the balance between collected reward and computational runtime.
+
+In particular, this thesis makes the following contributions:
+\begin{itemize}
+    \item It compares three heuristic approaches for the TTSP: a greedy
+    insertion baseline, a local-search heuristic using prize-aware
+    add/drop/swap moves together with 2-opt route improvement, and a memetic
+    genetic algorithm that combines population-based search with local
+    improvement.
+    \item It evaluates how these heuristic choices trade solution quality
+    against runtime across different instance sizes and travel budgets, with
+    the goal of identifying when the additional cost of more complex heuristics
+    is justified.
+\end{itemize}
 
 %-------------------------------------------------------------------------
 \section{The algorithms}
