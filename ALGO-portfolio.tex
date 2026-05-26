@@ -314,8 +314,8 @@ The BEP spans two quartiles (Q3 and Q4). The planning below is organized per wee
   \item \textbf{Week 1 -- 4: Literature Study \& Greedy Baseline}
   \begin{itemize}
     \item Study literature on the Prize-Collecting TSP, Orienteering Problem, and common heuristics (local search, metaheuristics).
-    \item Implement a greedy insertion heuristic (value-to-cost ratio) as a fast baseline.
-    \item Develop core C++ infrastructure: instance representation, distance calculations, and solution I/O.
+    \item Implement a greedy insertion heuristic based on reward gain per additional travel cost as a fast baseline.
+    \item Develop core Python infrastructure: instance representation, shortest-path distance calculations, and solution I/O.
   \end{itemize}
 
   \item \textbf{Week 5 -- 8: Dataset Generation Design \& Midterm Report}
@@ -364,7 +364,7 @@ The BEP spans two quartiles (Q3 and Q4). The planning below is organized per wee
 \section{Midterm status report (max 1 page)}
 %-------------------------------------------------------------------------
 \textbf{Overview of Progress:}
-Work so far has focused on establishing a baseline for the Time-Constrained TSP. A greedy heuristic, which iteratively adds nodes based on the best value-to-insertion-cost ratio while respecting the length budget `L`, has been successfully implemented in C++. The necessary infrastructure for instance generation, distance calculations (respecting adjacency), and solution output is also complete.
+Work so far has focused on establishing a baseline for the Time-Constrained TSP. A greedy heuristic, which iteratively inserts nodes based on the best reward gain per additional travel cost while respecting the length budget~$L$, has been implemented in Python. The necessary infrastructure for instance generation, shortest-path distance calculations on sparse graphs, and solution output is also complete.
 \\ \\
 \textbf{Difficulties and Pivot:}
 The initial plan was to develop a Mixed-Integer Linear Program (MILP) and investigate a variant with refueling stops. However, I have pivoted the project to focus exclusively on developing high-performance heuristics for the standard Time-Constrained TSP. This decision was made for two main reasons:
@@ -552,12 +552,15 @@ In particular, this thesis makes the following contributions:
 
 \subsubsection{Greedy Baseline}
 
-The implemented problem setting uses node~0 as the depot, while every other node
-has an associated reward value. Distances are Euclidean on the edges that are
-allowed by the instance, and an edge that is not present in the adjacency
-structure is treated as infeasible. A tour is therefore feasible only if every
-edge used by the tour exists and the total length of the closed tour, including
-the return to the depot, is at most the budget~$L$.
+% The implemented problem setting uses node~1 as the depot. Each node has an
+% associated reward value, but the depot reward is not collected. The input is an
+% undirected weighted graph, and the graph is not assumed to be complete. Before
+% constructing a solution, the algorithm therefore computes shortest paths between
+% all pairs of nodes. When the heuristic inserts a node between two consecutive
+% nodes in the current tour, that connection is interpreted as the shortest path
+% between those nodes in the original graph. A tour is feasible if the total length
+% of the expanded route, including the return to the depot, is at most the
+% budget~$L$.
 
 As a first baseline, I implemented a greedy insertion heuristic that builds a
 tour incrementally. The algorithm starts with the trivial tour containing only
@@ -565,13 +568,24 @@ the depot. In every iteration, it considers each node that is not yet in the
 tour and tests all possible insertion positions between two consecutive tour
 vertices $a$ and $b$. For a candidate node $v$, the additional travel cost of
 inserting $v$ between $a$ and $b$ is computed as
-$d(a,v)+d(v,b)-d(a,b)$. For each node, the algorithm keeps only the insertion
-position with minimum additional cost, and then assigns the node a score equal
-to its reward divided by this cost. After that, the algorithm simulates the
-corresponding insertion and checks whether the resulting closed tour is still
-feasible with respect to the budget~$L$. Among all feasible candidates, it
-selects the node with the highest reward-to-cost ratio, inserts it at the best
-position, and repeats this process until no further feasible insertion exists.
+$d(a,v)+d(v,b)-d(a,b)$, where each distance is a shortest-path distance in the
+input graph. Insertions that would exceed the budget~$L$ are discarded.
+
+The reward gain of an insertion is not necessarily only the reward of node~$v$.
+Because each connection in the tour is expanded into a shortest path in the
+original graph, inserting $v$ may also add or remove intermediate nodes from the
+expanded route. The implementation therefore evaluates the total collected
+reward after the insertion, counting each visited node at most once and excluding
+the depot, and uses the difference from the current collected reward as the
+reward gain. Each feasible insertion is scored by
+\[
+  \frac{\text{reward gain}}{\text{additional travel cost}}.
+\]
+The algorithm chooses the feasible insertion with the highest score. Ties are
+broken deterministically by preferring the larger reward gain, then the smaller
+additional travel cost, and finally the smaller node number. The selected node
+is inserted into the tour, and the process repeats until no feasible insertion
+with positive reward gain remains.
 
 The purpose of this heuristic is to provide a fast constructive method that
 balances the benefit of visiting a node against the extra travel needed to
@@ -579,7 +593,6 @@ include it in the tour. At the same time, the method is inherently myopic,
 because every decision is based only on the current tour and the locally best
 insertion score. Consequently, it serves as a practical baseline, but it does
 not guarantee an optimal solution.
-This section describes and introduces several algorithms and approaches of that were used.
 
 \subsubsection{Local Search}
 
@@ -596,6 +609,25 @@ fail to produce a correct solution, this should be discussed as well.
 For optimization problems: discuss the quality of the solutions computed by your algorithm(s).
 For algorithms from the literature: discuss with your supervisor in
 how much detail you should do the analysis.}
+
+\subsubsection{Greedy Baseline}
+
+Let $n$ be the number of nodes and $m$ the number of edges. The preprocessing
+step runs Dijkstra's algorithm from every node, which takes
+$O(n(m+n)\log n)$ time when using a binary heap. The implementation also stores
+the corresponding shortest paths and node-count information for reward
+accounting.
+
+During the greedy construction, at most $n-1$ nodes can be inserted into the
+tour. If the current tour contains $k$ selected nodes, one iteration considers
+$O(nk)$ candidate insertions. In the current implementation, evaluating a
+candidate may require copying and updating node-count information and recomputing
+the collected reward, which is $O(n)$ in the worst case. Summed over all
+iterations, the greedy construction therefore takes $O(n^4)$ time in the worst
+case after preprocessing. The heuristic always returns a feasible solution
+because every accepted insertion is checked against the budget, but it is myopic:
+it optimizes only the best immediate reward gain per additional travel cost and
+therefore does not guarantee an optimal TTSP solution.
 
 %-------------------------------------------------------------------------
 \section{Experimental evaluation}
