@@ -565,9 +565,12 @@ In particular, this thesis makes the following contributions:
 % of the expanded route, including the return to the depot, is at most the
 % budget~$L$.
 
-As a first baseline, I implemented a greedy insertion heuristic that builds a
-tour incrementally. The algorithm starts with the trivial tour containing only
-the depot. In every iteration, it considers each node that is not yet in the
+The greedy baseline follows the greedy-insertion principle described by
+Feillet et al.~\cite{feillet2005traveling}: starting from the depot loop, it
+repeatedly inserts the feasible node-position pair with the best reward gain per
+additional travel cost. The implementation adapts this principle to sparse TTSP
+instances by using shortest-path distances and by evaluating rewards on the
+expanded tour. In every iteration, it considers each node that is not yet in the
 tour and tests all possible insertion positions between two consecutive tour
 vertices $a$ and $b$. For a candidate node $v$, the additional travel cost of
 inserting $v$ between $a$ and $b$ is computed as
