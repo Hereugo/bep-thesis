@@ -276,25 +276,23 @@ make changes to the layout.}
 % \explanation{Clearly describe the problem(s) you plan to investigate, the scientific and/or
 % societal or industrial relevance, and the goal(s) of the project.}
 
-Time-constrained TSP is a variant of the Traveling Sailsman Problem in which given an upper bound $L$ the total length of the tour and each point in the input set $P$ is assigned a value of $v(p)$. The objective is to find a tour of total length of at most $L$ and visit a subset of points whose total value is maxmized. 
+Time-constrained TSP is a variant of the Traveling Salesman Problem in which a tour must start and end at a fixed depot while staying within an upper bound~$L$ on total travel cost. Each non-depot point in the input set~$P$ is assigned a reward. The objective is to choose a subset of points and a depot-starting, depot-ending tour that maximizes collected reward while keeping the total travel cost at most~$L$.
 \\ \\
-In this project, I'll consider an extension of time-constrained TSP in which visiting a point $p$ replenishes the remaining travel budget $L$ with a function $r(p)$. I'll investigate existing algorithmic approaches and performance under realistic constraints, including a maximum travel budget (capacity) $L$.
+In this project, I study this non-refueling TTSP variant on sparse weighted graphs. The focus is empirical: implement a fast greedy baseline, implement a genetic algorithm, use a small-instance exact solver as a reference where possible, and compare the resulting solution quality across generated instance size classes and travel budgets.
 
 \subsubsection{Relevance}
 
-This problem is relevant to transportation logistics. Consider a vehicle transporting goods with a limited fuel capacity. The driver must choose which drop-off locations to service in order to maximize total profit (e.g., payment per delivery) while remaining fuel-feasible. Along the route, the vehicle may stop at designated refueling locations (such as gas stations or depots) that replenish fuel, typically up to the tank capacity. Here the travel budget corresponds to fuel, and $r(p)$ models models the amount of fuel regained when refueling at location $p$.
+This problem is relevant to transportation logistics. Consider a courier with a fixed travel budget, for example due to a delivery deadline, battery range, or working-hour limit. The dispatcher must choose which reward-bearing locations to visit and in what order, while ensuring that the vehicle can return to the depot within the budget. The model captures the trade-off between collecting more reward and spending more travel cost.
 
 \subsubsection{Goal}
 
-The goal of this project is to extend time-constrained TSP formulations by introducing refueling decisions with a hard capacity limit, and to evaluate the approach by comparing it with existing methods on logistics-style benchmark instances.
+The goal of this project is to evaluate how much solution quality is gained by moving from a deterministic greedy baseline to a population-based genetic algorithm for the graph-based TTSP. On small instances, the heuristic rewards are compared with optimal rewards from a small-instance exact solver. On larger instances, where exact optimization is not used as the main method, results are compared against the best-known reward found among comparable result sets.
 
 \subsubsection{Scope}
 
-The project will consider heuristic solution approaches for the time-constrained TSP and related prize-collecting routing problems. In particular, as baseline methods, I will (i) implement a mixed-integer linear program (MILP) for the prize-collecting problem, and (ii) implement an expanded-graph (state-space) baseline for the refueling variant by discretizing fuel into levels, then (iii) I will solve the resulting model using a MILP to obtain a strong baseline for comparison.
+The project scope is limited to the non-refueling TTSP. It includes three computational components: a greedy insertion baseline, a genetic algorithm that searches over tour-building priorities, and a small-instance exact solver used as a reference on small datasets. Local search and refueling decisions are outside the final project scope.
 \\ \\
-On these baselines, I will implement improvement heuristics, including 2-opt/3-opt route polishing and prize-aware neighborhood moves (e.g., add/drop/swap) while maintaining feasibility with respect to both the length budget and refueling dynamics.
-\\ \\
-Experiments will be conducted on synthetic logistics-style instances, and will report collected reward value, feasibility, and computational runtime.
+Experiments are conducted on generated sparse graph instances and report collected reward, feasibility, travel cost, and available runtime metadata. The main comparison unit is a result set: one approach under one dataset collection, travel budget, parameter setting, and seed when applicable.
 
 %-------------------------------------------------------------------------
 \subsection{Planning}
@@ -313,43 +311,43 @@ The BEP spans two quartiles (Q3 and Q4). The planning below is organized per wee
 \begin{itemize}
   \item \textbf{Week 1 -- 4: Literature Study \& Greedy Baseline}
   \begin{itemize}
-    \item Study literature on the Prize-Collecting TSP, Orienteering Problem, and common heuristics (local search, metaheuristics).
+    \item Study literature on the Orienteering Problem, related reward-collecting routing variants, and metaheuristics.
     \item Implement a greedy insertion heuristic based on reward gain per additional travel cost as a fast baseline.
     \item Develop core Python infrastructure: instance representation, shortest-path distance calculations, and solution I/O.
   \end{itemize}
 
   \item \textbf{Week 5 -- 8: Dataset Generation Design \& Midterm Report}
   \begin{itemize}
-    \item Design a strategy for generating varied and challenging datasets, including uniformly random and clustered (Gaussian Mixture Model) point distributions.
+    \item Design a strategy for generating varied sparse weighted graph datasets with node rewards.
     \item Prepare the midterm report, documenting the pivot, the implemented greedy heuristic, and the updated plan for Q4.
   \end{itemize}
   
   \item \textbf{Week 9 -- 10: Buffer and Finalize Dataset Generator}
   \begin{itemize}
     \item Address any feedback from the midterm report.
-    \item Implement the Python-based dataset generator script.
+    \item Finalize the Rudy-based dataset generation workflow.
   \end{itemize}
 \end{itemize}
 
-\subsubsection{Q4: Advanced Heuristics, Experiments, and Final Report}
+\subsubsection{Q4: Genetic Algorithm, Experiments, and Final Report}
 
 \begin{itemize}
-  \item \textbf{Week 1 -- 3: Local Search Implementation}
+  \item \textbf{Week 1 -- 3: Genetic Algorithm Implementation}
   \begin{itemize}
-    \item Implement a 2-opt local search procedure to improve solutions from the greedy heuristic.
-    \item Test and debug the local search on small instances.
+    \item Design and implement a Genetic Algorithm (GA) that searches over candidate tour-building priorities.
+    \item Test and debug GA decoding, crossover, mutation, and seeded reproducibility on small instances.
   \end{itemize}
   
-  \item \textbf{Week 4 -- 6: Genetic Algorithm Implementation}
+  \item \textbf{Week 4 -- 6: Exact Reference and Result Infrastructure}
   \begin{itemize}
-    \item Design and implement a Genetic Algorithm (GA). This will include defining crossover and mutation operators suitable for permutation-based solutions.
-    \item Integrate the 2-opt local search as a solution improvement step within the GA (memetic algorithm).
+    \item Implement a small-instance exact solver to provide optimal rewards where feasible.
+    \item Create reusable result-set organization, validation, and comparison scripts.
   \end{itemize}
   
   \item \textbf{Week 7 -- 8: Experimental Campaign \& Analysis}
   \begin{itemize}
-    \item Run comprehensive experiments comparing the greedy, greedy + 2-opt, and GA approaches across all generated datasets.
-    \item Analyze the results, focusing on solution quality (total value) versus runtime.
+    \item Run experiments comparing the greedy baseline and GA across all generated datasets.
+    \item Analyze the results using exact rewards for small instances and best-known rewards for larger instances.
   \end{itemize}
 
   \item \textbf{Week 9 -- 10: Final Report and Presentation}
@@ -367,19 +365,20 @@ The BEP spans two quartiles (Q3 and Q4). The planning below is organized per wee
 Work so far has focused on establishing a baseline for the Time-Constrained TSP. A greedy heuristic, which iteratively inserts nodes based on the best reward gain per additional travel cost while respecting the length budget~$L$, has been implemented in Python. The necessary infrastructure for instance generation, shortest-path distance calculations on sparse graphs, and solution output is also complete.
 \\ \\
 \textbf{Difficulties and Pivot:}
-The initial plan was to develop a Mixed-Integer Linear Program (MILP) and investigate a variant with refueling stops. However, I have pivoted the project to focus exclusively on developing high-performance heuristics for the standard Time-Constrained TSP. This decision was made for two main reasons:
+The initial plan was to investigate a refueling variant and later to add local-search improvements. The final project scope has instead been narrowed to the standard non-refueling TTSP, with a direct comparison between a greedy baseline and a genetic algorithm. This decision was made for three main reasons:
 \begin{enumerate}
-    \item The refueling variant adds significant complexity, and focusing on the core problem allows for a deeper and more thorough investigation of advanced heuristics.
-    \item MILP-based approaches are generally limited to small instances, whereas the new focus on heuristics (like local search and genetic algorithms) will allow for experiments on larger, more realistic datasets.
+    \item The refueling variant adds significant modeling complexity, while the implemented project language and experiments focus on a fixed travel budget without replenishment.
+    \item Local search would introduce an additional heuristic family, but the current comparison is already meaningful with a constructive greedy baseline, a stochastic genetic algorithm, and an exact small-instance reference.
+    \item A narrower scope leaves more time for careful result organization, validation, and interpretation across multiple dataset collections and travel budgets.
 \end{enumerate}
 
 \textbf{Remaining Work and Updated Planning:}
 The core task for the remainder of the project is to build upon the greedy baseline. The next steps are:
 \begin{enumerate}
-    \item \textbf{Dataset Generation:} Create structured datasets, particularly clustered instances using Gaussian Mixture Models, to rigorously test algorithm performance. This will be done using a Python script.
-    \item \textbf{Local Search:} Implement a 2-opt local search heuristic to improve the solutions found by the greedy algorithm.
-    \item \textbf{Metaheuristic:} Develop a Genetic Algorithm to find high-quality solutions, likely incorporating the local search as an improvement step.
-    \item \textbf{Experimental Evaluation:} Conduct a comprehensive experimental campaign to compare the performance of the greedy, local search, and genetic algorithms across the generated datasets.
+    \item \textbf{Dataset Generation:} Generate sparse weighted graph datasets with small, medium, and large instance size classes.
+    \item \textbf{Metaheuristic:} Develop a Genetic Algorithm to find high-quality feasible tours under the travel budget.
+    \item \textbf{Exact Reference:} Use a small-instance exact solver to compute optimal rewards where feasible.
+    \item \textbf{Experimental Evaluation:} Compare result sets from the greedy baseline and GA, using exact rewards on small instances and best-known rewards elsewhere.
 \end{enumerate}
 
 %-------------------------------------------------------------------------
@@ -446,15 +445,15 @@ TODO
 % from a purely scientific rather than an applied perspective.)
 % Make sure that your problem statement is unambiguous and clear.}
 
-Modern logistics networks increasingly demand in efficient route planning
+Modern logistics networks increasingly demand efficient route planning
 under real-world operational constraints~\cite{GRAZIASPERANZA2018830}. Consider a courier operating
 a same-day delivery service: departing from a depot, the vehicle
-must return before a hard deadline imposed by fuel capacity, battery
-limitations, or working-hour regulations. Because the number of
+must return before exhausting its travel budget, for example due to battery
+range or working-hour regulations. Because the number of
 potential delivery locations typically exceeds what can be served within
 these constraints, the dispatcher must make a decision: which
 subset of customers to visit, and in what order, so as to maximize the
-total collected value---whether measured in revenue, number of parcels,
+total collected reward, whether measured in revenue, number of parcels,
 or customer priority score. In this setting, the selection of delivery points
 and the underlying routing problem is generally known as the
 \textbf{Time-Constrained Traveling Salesman Problem} (TTSP) or the
@@ -503,11 +502,14 @@ of the problem that have been defined in literature.
 Several application-oriented variants extend this basic model with additional
 constraints. For example, Sebastia and Marzal~\cite{MarzalSebastia2024} introduces the Team Orienteering Problem with Time Windows and Variable Profits (TOPTWVP), where each node carries a time window for service and a profit that depends on how long the vehicle spends there. Morandi et al.~\cite{MorandiLeusYaman2024} introduces the OP with multiple drones (OP-mD), where a truck and a fleet of battery-constrained drones cooperate to maximize collected prizes within a time budget. 
 
-The literature also contains a wide range of heuristic approaches for these
-problems, since exact optimization quickly becomes computationally expensive on
-larger instances~\cite{Vansteenwegen2011}. This have motivated the empirical comparison in this report, which
-studies how different heuristic design choices perform on graph-based TTSP
-instances.
+Feillet et al.~\cite{feillet2005traveling} survey Traveling Salesman Problems
+with Profits, a closely related family of reward-collecting routing problems.
+Their survey describes classical heuristic principles such as greedy insertion,
+as well as metaheuristic approaches including genetic algorithms. This survey
+provides the basis for the heuristic families selected in this report. This
+report implements and evaluates graph-based TTSP versions of a classical
+greedy-insertion principle and a genetic-algorithm-style metaheuristic on
+generated sparse weighted graph instances.
 
 \subparagraph{Contributions.}
 % \explanation{Give a summary of your work, and relate it to what is known in the literature.
@@ -518,21 +520,23 @@ instances.
 % but the structure would be slightly different;
 % please discuss with your supervisor what is expected.}
 
-The contribution of this thesis is an empirical study of heuristic design
-choices for the TTSP. The study focuses on how increasing heuristic complexity 
-affects the balance between collected reward and computational runtime.
+The contribution of this thesis is an empirical study of TTSP result quality on
+generated sparse weighted graph instances. The thesis implements and evaluates
+two literature-grounded heuristic families: a deterministic greedy insertion
+baseline and a stochastic genetic algorithm. The study focuses on how much
+additional collected reward is obtained by moving from the greedy baseline to
+the genetic algorithm, and where exact small-instance references or best-known
+rewards can be used to interpret solution quality.
 
 In particular, this thesis makes the following contributions:
 \begin{itemize}
-    \item It compares three heuristic approaches for the TTSP: a greedy
-    insertion baseline, a local-search heuristic using prize-aware
-    add/drop/swap moves together with 2-opt route improvement, and a memetic
-    genetic algorithm that combines population-based search with local
-    improvement.
-    \item It evaluates how these heuristic choices trade solution quality
-    against runtime across different instance sizes and travel budgets, with
-    the goal of identifying when the additional cost of more complex heuristics
-    is justified.
+    \item It implements and compares a greedy insertion baseline and a genetic
+    algorithm for the graph-based TTSP.
+    \item It uses a small-instance exact solver as a reference for optimal
+    rewards on small instances.
+    \item It organizes experiments as result sets and evaluates solution
+    quality across different instance size classes, travel budgets, and GA
+    seeds using exact or best-known reward ratios.
 \end{itemize}
 
 %-------------------------------------------------------------------------
@@ -552,7 +556,7 @@ In particular, this thesis makes the following contributions:
 \subsubsection{Greedy Baseline}
 
 % The implemented problem setting uses node~1 as the depot. Each node has an
-% associated reward value, but the depot reward is not collected. The input is an
+% associated reward, but the depot reward is not collected. The input is an
 % undirected weighted graph, and the graph is not assumed to be complete. Before
 % constructing a solution, the algorithm therefore computes shortest paths between
 % all pairs of nodes. When the heuristic inserts a node between two consecutive
@@ -593,9 +597,32 @@ because every decision is based only on the current tour and the locally best
 insertion score. Consequently, it serves as a practical baseline, but it does
 not guarantee an optimal solution.
 
-\subsubsection{Local Search}
+\subsubsection{Small-Instance Exact Solver}
+
+For small instances, I implemented an exact solver to compute an optimal reward
+for the TTSP. This solver is not intended as the main scalable method. Instead,
+it provides a reference point for assessing the quality of heuristic solutions
+on instances where exact optimization is computationally feasible. In the
+experimental evaluation, exact results are used to compute reward ratios for the
+greedy baseline and the genetic algorithm on small datasets.
 
 \subsubsection{Genetic Algorithm}
+
+The genetic algorithm represents a candidate solution by a permutation of
+non-depot nodes. This permutation is interpreted as a priority order for trying
+node insertions. To evaluate one chromosome, the decoder starts from the depot
+and processes nodes in chromosome order. For each node, it searches for the best
+feasible insertion position in the current tour, using the same shortest-path
+expanded reward accounting as the greedy baseline. If no feasible positive-gain
+insertion exists for that node, the decoder skips it.
+\\ \\
+The initial population includes a chromosome derived from the greedy insertion
+order and additional randomly shuffled chromosomes. New generations are produced
+using tournament selection, order crossover, swap mutation, and elitism. The
+fitness of an individual is its collected reward, with lower travel cost used as
+a tie-breaker. Because the method is stochastic, experiments are run with fixed
+seeds and summarized using best-of-$N$ seed summaries where multiple complete
+seed result sets are available.
 
 %-------------------------------------------------------------------------
 \subsection{Analysis of the algorithms}
@@ -628,6 +655,32 @@ because every accepted insertion is checked against the budget, but it is myopic
 it optimizes only the best immediate reward gain per additional travel cost and
 therefore does not guarantee an optimal TTSP solution.
 
+\subsubsection{Small-Instance Exact Solver}
+
+The exact solver is used only as a reference method on small instances. Its role
+is to compute an optimal reward for instances where doing so is practical, not to
+serve as the main algorithm for all dataset sizes. This makes it useful for
+quantifying heuristic quality on small instances, but unsuitable as the central
+approach for medium and large generated graphs.
+
+\subsubsection{Genetic Algorithm}
+
+Let $P$ be the population size and $G$ the number of generations. Each
+individual evaluation decodes a chromosome into a feasible tour. The decoder
+uses the same insertion routine as the greedy baseline, except that it considers
+nodes in chromosome order instead of always choosing the globally best immediate
+insertion. In the worst case, decoding one chromosome can consider $O(n^2)$
+insertions, with reward accounting costs similar to the greedy implementation.
+The total running time is therefore dominated by evaluating the initial
+population and all generated offspring over $G$ generations.
+\\ \\
+The genetic algorithm always returns a feasible tour because every decoded
+insertion is checked against the travel budget. It does not guarantee an optimal
+solution: crossover, mutation, and selection explore the space of priority
+orders heuristically. Its advantage is that it can test many different
+tour-building orders, which may overcome some of the greedy baseline's myopic
+choices.
+
 %-------------------------------------------------------------------------
 \section{Experimental evaluation}
 \label{sec:evaluation}
@@ -645,28 +698,80 @@ When possible and relevant, add figures of example data sets.
 If you use data sets from other sources, provide a reference
 to those data sets.}
 
-Data sets are generated with a c script that generates a random planar graph with $n$ nodes,
-where $n$ is a parameter. Rudy is the name of the script. I've extended this script to support
-generating nodes with reward values as well. 
+Data sets are generated with Rudy, a C program for generating random graph
+instances. I use its planar weighted graph generator and extend the generated
+instances with node rewards. The experiments are grouped into three instance
+size classes: small instances with 10 nodes, medium instances with 100 nodes,
+and large instances with 1000 nodes. Each generated graph is sparse and weighted,
+and each result set is evaluated under a fixed travel budget.
 
 %-------------------------------------------------------------------------
 \subsection{Experiments and discussion}
 \label{subsec:experiments}
 %-------------------------------------------------------------------------
-\explanation{For each experiment, describe the goal (what do you want
-to investigate?) and possibly a hypothesis, and the set-up of the experiment.
-The report the outcome (typically using graphs, or perhaps a table)
-and discuss the outcome. Try to not only say what the outcome is, but also
-to explain it. If you see certain strange effects that you cannot explain,
-then just say so---this is better than just ignoring the effects.
-When possible relate the outcome to the theoretical analysis you did in Section~\ref{subsec:analysis}.}
+The main experiment compares the greedy baseline against the genetic algorithm
+on matching dataset collection and travel budget pairs. For small instances, the
+small-instance exact solver provides the optimal reward, so heuristic quality is
+reported as a ratio to the optimum. For medium and large instances, no exact
+reference is used; instead, each solution is compared with the best-known reward
+among comparable valid result sets for the same graph and travel budget.
+\\ \\
+Because the genetic algorithm is stochastic, multiple seeded result sets are
+summarized using a best-of-$N$ seed summary when complete seeded runs are
+available. This means that the GA numbers describe the strongest solution found
+among those seeds for each instance, not expected single-run performance. In the
+current result sets, small and medium instances use best-of-3 summaries, while
+the large instance class uses best-of-1 because an additional large GA seed run
+is incomplete.
+\\ \\
+The current aggregate results are shown in Table~\ref{tab:aggregate-results}.
+The greedy baseline is already very strong on small instances. With travel
+budget 30, the GA reaches the exact optimum on all 100 small instances, while
+the greedy baseline reaches the optimum on 93 of them. With travel budget 100,
+both methods reach the optimum on all small instances. On medium instances, the
+GA provides the clearest improvement: it beats the greedy baseline in collected
+reward on 81 of 100 instances and improves the mean reward ratio from 0.979 to
+1.000 relative to the best-known reward. On large instances, the improvement is
+much smaller: the GA beats greedy on 18 of 100 instances, ties on the remaining
+82, and improves the mean reward ratio from 0.997 to 1.000.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{llrrrr}
+\toprule
+Scenario & Approach & Instances & Mean reward & Mean ratio & Wins \\
+\midrule
+Large, budget 100 & GA best-of-1 & 100 & 2423.8 & 1.000 & 20 \\
+Large, budget 100 & Greedy & 100 & 2416.7 & 0.997 & 80 \\
+Medium, budget 100 & GA best-of-3 & 100 & 1630.4 & 1.000 & 84 \\
+Medium, budget 100 & Greedy & 100 & 1596.2 & 0.979 & 16 \\
+Small, budget 30 & GA best-of-3 & 100 & 158.7 & 1.000 & 7 \\
+Small, budget 30 & Greedy & 100 & 157.4 & 0.991 & 93 \\
+Small, budget 100 & GA best-of-3 & 100 & 407.6 & 1.000 & 0 \\
+Small, budget 100 & Greedy & 100 & 407.6 & 1.000 & 100 \\
+\bottomrule
+\end{tabular}
+\caption{Aggregate comparison of the greedy baseline and genetic algorithm result sets. Ratios use exact optimum rewards for small instances and best-known rewards for medium and large instances. The wins column uses reward first, then lower travel cost and shorter route as tie-breakers.}
+\label{tab:aggregate-results}
+\end{table}
 
 %-------------------------------------------------------------------------
 \section{Concluding remarks}
 %-------------------------------------------------------------------------
-\explanation{Briefly discuss the results that you obtained, focusing on
-strengths and weaknesses, and discuss possible directions for future research.
-This would typically be about half a page.}
+The experiments show that the greedy baseline is a strong constructive method
+for the studied TTSP instances. On small instances it often reaches the exact
+optimum, and with the larger travel budget it matches the exact optimum on all
+tested small graphs. The genetic algorithm is most useful on medium instances,
+where it improves the mean reward ratio and beats the greedy baseline on most
+instances. On large instances, the current GA configuration gives only a small
+average reward improvement over greedy while requiring substantially more
+runtime.
+\\ \\
+These results support the final project scope: a direct comparison between the
+greedy baseline and genetic algorithm is already informative without adding a
+separate local-search component. Future work could still investigate local
+search or hybrid memetic variants, but those extensions should be evaluated as a
+new experiment rather than treated as part of the current thesis contribution.
 
 %-------------------------------------------------------------------------
 \bibliography{references}
