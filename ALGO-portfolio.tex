@@ -619,13 +619,19 @@ Using the current tour $T$ and updated tour $T'$ from
 Figure~\ref{fig:greedy-before-after-insertion}, the feasible insertion is scored
 as
 \[
-  \operatorname{score}(x,u,v) = \frac{\Delta R}{\Delta C}.
+  \operatorname{score}(x,u,v) =
+  \begin{cases}
+    \infty, & \text{if } \Delta C = 0,\\
+    \frac{\Delta R}{\Delta C}, & \text{otherwise.}
+  \end{cases}
 \]
 The algorithm chooses the feasible insertion with the highest score. Ties are
 broken deterministically by preferring the larger reward gain, then the smaller
 additional travel cost, and finally the smaller node number. The selected node
 is inserted into the tour, and the process repeats until no feasible insertion
-with positive reward gain remains.
+with positive reward gain remains. The full construction procedure is summarized
+in Appendix~\ref{app:greedy-baseline-pseudocode},
+Listing~\ref{lst:greedy-baseline}.
 
 The purpose of this heuristic is to provide a fast constructive method that
 balances the benefit of visiting a node against the extra travel needed to
@@ -834,6 +840,41 @@ such as tables with additional experimental results, into an appendix.
 Before adding an appendix, discuss this with your supervisor.
 Note that the main text should contain all material that is important,
 and that the assessment of your work will be done based on the main text.}
+
+\subsection{Greedy Baseline Pseudocode}
+\label{app:greedy-baseline-pseudocode}
+
+\begin{lstlisting}[caption={Greedy Baseline construction procedure.},label={lst:greedy-baseline},mathescape=true]
+GreedyBaseline(G, r, L, depot):
+    compute shortest-path distances and paths between all node pairs
+    tour <- [depot]
+    expanded <- shortest-path expansion of tour
+
+    while true:
+        best <- none
+        for each node x not in tour:
+            for each consecutive pair (u, v) in tour:
+                T_new <- expanded tour after inserting x
+                DeltaC <- cost(T_new) - cost(expanded)
+                if cost(expanded) + DeltaC > L:
+                    continue
+                DeltaR <- reward(T_new) - reward(expanded)
+                if DeltaR <= 0:
+                    continue
+                if DeltaC = 0:
+                    score <- infinity
+                else:
+                    score <- DeltaR / DeltaC
+                key <- (score, DeltaR, -DeltaC, -x)
+                best <- better of best and (key, x, pos, T_new)
+
+        if best is none:
+            break
+        insert best.x into tour at best.pos
+        expanded <- best.T_new
+
+    return expanded
+\end{lstlisting}
 
 %-------------------------------------------------------------------------
 \end{document}
