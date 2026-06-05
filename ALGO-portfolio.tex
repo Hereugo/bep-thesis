@@ -457,7 +457,9 @@ total collected reward, whether measured in revenue, number of parcels,
 or customer priority score. In this setting, the selection of delivery points
 and the underlying routing problem is generally known as the
 \textbf{Time-Constrained Traveling Salesman Problem} (TTSP) or the
-\textbf{Orienteering Problem}. In the TTSP, a route must start and end at a
+\textbf{Orienteering Problem}. 
+
+In the TTSP, a route must start and end at a
 depot, visit only some of the available locations, and stay within a fixed travel
 budget. Each non-depot location has an associated reward, and the goal is to
 choose which locations to visit and in which order so that the collected reward
@@ -482,8 +484,6 @@ approaches for this problem: a greedy insertion baseline and a genetic
 algorithm. A small-instance exact solver is used as a reference on small
 instances. The contribution of the work is an empirical comparison of these
 approaches for graph-based TTSP instances.
-
-% The paper is structured as follows: \textbf{TODO}
 
 \subparagraph{Related work.}
 % \explanation{Discuss what is known in the literature about your problem and 
@@ -571,21 +571,55 @@ repeatedly inserts the feasible node-position pair with the best reward gain per
 additional travel cost. The implementation adapts this principle to sparse TTSP
 instances by using shortest-path distances and by evaluating rewards on the
 expanded tour. In every iteration, it considers each node that is not yet in the
-tour and tests all possible insertion positions between two consecutive tour
-vertices $a$ and $b$. For a candidate node $v$, the additional travel cost of
-inserting $v$ between $a$ and $b$ is computed as
-$d(a,v)+d(v,b)-d(a,b)$, where each distance is a shortest-path distance in the
-input graph. Insertions that would exceed the budget~$L$ are discarded.
+selected-node tour. For each such candidate node, it tries placing the node into
+each gap between two consecutive selected vertices $u$ and $v$ in the current
+tour. For one candidate insertion, let $T$
+denote the current shortest-path-expanded tour and let $T'$ denote the expanded
+tour after inserting candidate node $x$ between $u$ and $v$. This replacement is
+shown in Figure~\ref{fig:greedy-before-after-insertion}.
 
-The reward gain of an insertion is not necessarily only the reward of node~$v$.
-Because each connection in the tour is expanded into a shortest path in the
-original graph, inserting $v$ may also add or remove intermediate nodes from the
-expanded route. The implementation therefore evaluates the total collected
-reward after the insertion, counting each visited node at most once and excluding
-the depot, and uses the difference from the current collected reward as the
-reward gain. Each feasible insertion is scored by
+\begin{figure}[t]
+\centering
+\begin{minipage}{0.47\textwidth}
+\centering
+\includegraphics[width=\linewidth]{assets/before-tour.png}
+\subcaption{Current tour $T$ before inserting candidate node $x$.}
+\end{minipage}
+\hfill
+\begin{minipage}{0.47\textwidth}
+\centering
+\includegraphics[width=\linewidth]{assets/after-tour.png}
+\subcaption{Updated tour $T'$ after inserting $x$ between two tour vertices.}
+\end{minipage}
+\caption{The before and after images represent the tours $T$ and $T'$, respectively. Inserting a candidate node replaces one shortest-path segment in the selected-node tour by two shortest-path segments. The hidden intermediate vertices on these segments are part of the expanded tour.}
+\label{fig:greedy-before-after-insertion}
+\end{figure}
+
+The cost effect of this insertion is the additional travel cost
 \[
-  \frac{\text{reward gain}}{\text{additional travel cost}}.
+  \Delta C = d(u,x)+d(x,v)-d(u,v),
+\]
+where $d(p,q)$ is the shortest-path distance between vertices $p$ and $q$.
+Insertions that would exceed the travel budget~$L$ are discarded.
+
+The reward effect is computed after expanding the tour, not just from the reward
+of node~$x$. Inserting $x$ may also add or remove intermediate nodes from the
+expanded tour. The collected reward of an expanded tour is
+\[
+  R(T)=\sum_{\substack{u\in V(T)\\u\neq 1}} r_u,
+\]
+where $V(T)$ is the set of visited vertices in the expanded tour and $r_u$ is the
+reward of vertex $u$. The depot is excluded, and every non-depot reward is
+counted at most once. The reward gain is
+\[
+  \Delta R = R(T') - R(T).
+\]
+
+Using the current tour $T$ and updated tour $T'$ from
+Figure~\ref{fig:greedy-before-after-insertion}, the feasible insertion is scored
+as
+\[
+  \operatorname{score}(x,u,v) = \frac{\Delta R}{\Delta C}.
 \]
 The algorithm chooses the feasible insertion with the highest score. Ties are
 broken deterministically by preferring the larger reward gain, then the smaller
