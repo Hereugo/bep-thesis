@@ -881,6 +881,11 @@ the clearest improvement: it wins on 79 of 100 instances and improves the mean
 reward ratio from 0.967 to 1.000 relative to the best-known reward. On large
 instances, the improvement is smaller: the GA wins on 43 of 100 instances and
 improves the mean reward ratio from 0.993 to 1.000.
+Rows for travel budgets 200, 300, and 500 currently have matching GA result
+sets for medium instances. Large instances also have matching GA result sets for
+travel budget 200. Other small and large rows for those budgets report only the
+greedy baseline, so their reward-ratio entries are left blank until matching GA
+result sets are available for the same problem instances and travel budgets.
 
 \begin{table}[ht]
 \centering
@@ -907,6 +912,18 @@ Genetic Algorithm Best-of-3 & 100 & 310.5 & 1.000 & 0.571 & 2.036 \\
 \hline
 Small-Instance Exact Solver & 100 & 310.5 & 1.000 & 0.583 & 1.263 \\
 \hline
+\multicolumn{6}{|l|}{$L_{\max}=200$} \\
+\hline
+Greedy Baseline & 100 & 312.3 &  & 0.289 & 0.001 \\
+\hline
+\multicolumn{6}{|l|}{$L_{\max}=300$} \\
+\hline
+Greedy Baseline & 100 & 312.3 &  & 0.193 & 0.001 \\
+\hline
+\multicolumn{6}{|l|}{$L_{\max}=500$} \\
+\hline
+Greedy Baseline & 100 & 312.3 &  & 0.116 & 0.001 \\
+\hline
 \end{tabular}
 \label{tab:planar-weighted-small-ttsp-results}
 \end{table}
@@ -926,6 +943,24 @@ Greedy Baseline & 100 & 1415.4 & 0.967 & 0.990 & 0.039 \\
 \hline
 Genetic Algorithm Best-of-3 & 100 & 1462.4 & 1.000 & 0.996 & 17.700 \\
 \hline
+\multicolumn{6}{|l|}{$L_{\max}=200$} \\
+\hline
+Greedy Baseline & 100 & 2334.1 & 0.978 & 0.995 & 0.180 \\
+\hline
+Genetic Algorithm Best-of-3 & 100 & 2387.8 & 1.000 & 0.997 & 52.983 \\
+\hline
+\multicolumn{6}{|l|}{$L_{\max}=300$} \\
+\hline
+Greedy Baseline & 100 & 2971.0 & 0.981 & 0.996 & 0.320 \\
+\hline
+Genetic Algorithm Best-of-3 & 100 & 3028.4 & 1.000 & 0.998 & 94.101 \\
+\hline
+\multicolumn{6}{|l|}{$L_{\max}=500$} \\
+\hline
+Greedy Baseline & 100 & 3816.6 & 0.991 & 0.996 & 0.653 \\
+\hline
+Genetic Algorithm Best-of-3 & 100 & 3851.0 & 1.000 & 0.998 & 209.730 \\
+\hline
 \end{tabular}
 \label{tab:planar-weighted-medium-ttsp-results}
 \end{table}
@@ -944,6 +979,20 @@ Method & Instances & Avg. reward & Avg. reward ratio & Avg. budget utilization &
 Greedy Baseline & 100 & 2361.4 & 0.993 & 0.996 & 2.544 \\
 \hline
 Genetic Algorithm Best-of-3 & 100 & 2376.9 & 1.000 & 0.997 & 207.493 \\
+\hline
+\multicolumn{6}{|l|}{$L_{\max}=200$} \\
+\hline
+Greedy Baseline & 100 & 4343.1 & 0.997 & 0.998 & 9.451 \\
+\hline
+Genetic Algorithm Best-of-3 & 100 & 4356.0 & 1.000 & 0.998 & 568.352 \\
+\hline
+\multicolumn{6}{|l|}{$L_{\max}=300$} \\
+\hline
+Greedy Baseline & 100 & 6047.4 &  & 0.999 & 17.749 \\
+\hline
+\multicolumn{6}{|l|}{$L_{\max}=500$} \\
+\hline
+Greedy Baseline & 100 & 9049.2 &  & 0.999 & 45.382 \\
 \hline
 \end{tabular}
 \label{tab:planar-weighted-large-ttsp-results}
