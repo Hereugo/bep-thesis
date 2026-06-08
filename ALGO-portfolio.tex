@@ -422,7 +422,19 @@ Would you do anything differently, if you had to do a similar project again?}
 and conclusions of your work. Typically the abstract consists of a single
 paragraph of about 5--10 lines.}
 
-TODO
+This thesis studies the graph-based Time-Constrained Traveling Salesman Problem,
+where a tour starts and ends at a depot, collects rewards from visited non-depot
+nodes, and must stay within a fixed travel budget. The study compares a
+deterministic greedy insertion baseline with a population-based genetic algorithm
+on generated sparse weighted graph instances, using a small-instance exact solver
+only as a reference for heuristic quality. Experiments are performed on 300
+generated planar weighted graph instances with 10, 100, and 1000 vertices, with
+tours validated after shortest-path expansion. The best-of-3 GA reaches the
+optimal reward on all small instances and achieves higher average rewards on
+medium and large instances. These improvements come at a substantially higher
+runtime cost, so the greedy baseline remains preferable when fast solutions are
+needed, while the genetic algorithm is useful when additional runtime is
+acceptable for modest reward improvements.
 
 \end{abstract}
 %-------------------------------------------------------------------------
