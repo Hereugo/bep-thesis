@@ -536,7 +536,7 @@ In particular, this thesis makes the following contributions:
     rewards on small instances.
     \item It organizes experiments as result sets and evaluates solution
     quality across different instance size classes, travel budgets, and GA
-    seeds using exact or best-known reward ratios.
+    seeds using validated reward, budget utilization, and runtime.
 \end{itemize}
 
 %-------------------------------------------------------------------------
@@ -837,6 +837,36 @@ generator with density parameter 40. Edge weights are integer values in the rang
 graph seed and reward seed are used for each instance, so the files within a
 collection differ both in graph topology and in reward assignment.
 
+Figure~\ref{fig:dataset-example-instances} shows representative examples from
+the three instance size classes. These examples are included to illustrate the
+scale and structure of the generated planar weighted graphs. In these visualizations,
+node color and size indicate reward, edge width indicates edge weight, and the
+depot is outlined in orange.
+
+\begin{figure}[ht]
+\centering
+\begin{minipage}{0.32\textwidth}
+\centering
+\includegraphics[width=\linewidth]{assets/small-instance.png}
+\subcaption{Small instance size class.}
+\end{minipage}
+\hfill
+\begin{minipage}{0.32\textwidth}
+\centering
+\includegraphics[width=\linewidth]{assets/medium-instance.png}
+\subcaption{Medium instance size class.}
+\end{minipage}
+\hfill
+\begin{minipage}{0.32\textwidth}
+\centering
+\includegraphics[width=\linewidth]{assets/large-instance.png}
+\subcaption{Large instance size class.}
+\end{minipage}
+\caption{Example generated problem instances from the small, medium, and large
+instance size classes.}
+\label{fig:dataset-example-instances}
+\end{figure}
+
 Each input instance is stored as a plain-text file. The first line contains the
 number of vertices $n$ and the number of edges $m$. The second line contains
 $n$ rewards $r_1,\ldots,r_n$, one for each vertex in vertex order. The remaining
@@ -851,12 +881,11 @@ the experimental setup.
 \label{subsec:experiments}
 %-------------------------------------------------------------------------
 The main experiment compares the greedy baseline against the genetic algorithm
-on matching dataset collection and travel budget pairs. For small instances, the
-small-instance exact solver provides the optimal reward, so heuristic quality is
-reported as a ratio to the optimum. For medium and large instances, no exact
+on matching dataset collection and varied travel budget. For small instances, the
+small-instance exact solver provides the optimal reward. For medium and large instances, no exact
 reference is used; instead, each solution is compared with the best-known reward
 among comparable valid result sets for the same graph and travel budget.
-\\ \\
+
 Because the genetic algorithm is stochastic, multiple seeded result sets are
 summarized using a best-of-$N$ seed summary when complete seeded runs are
 available. This means that the GA numbers describe the strongest solution found
@@ -866,62 +895,75 @@ Unless stated otherwise, the genetic algorithm uses a population size of $50$,
 $100$ generations, mutation rate $0.1$, tournament size $3$, and elite size
 $1$. Runs are performed with fixed random seeds so that result sets are
 reproducible.
-\\ \\
+
+All reported heuristic runtimes were measured on GitHub-hosted Actions runners
+using the \texttt{ubuntu-latest} image. At the time of execution, this runner
+type provided a Linux x64 virtual machine with 4 vCPUs and 16 GB RAM for public
+repositories.
+
 The current aggregate results are shown in
 Tables~\ref{tab:planar-weighted-small-ttsp-results},
 \ref{tab:planar-weighted-medium-ttsp-results}, and
 \ref{tab:planar-weighted-large-ttsp-results}.
-The greedy baseline is already very strong on small instances. With travel
-budget 30, the GA reaches the exact optimum on all 100 small instances, while
-the greedy baseline reaches the optimum on 84 of them. With travel budget 100,
-the GA again reaches the exact optimum on all 100 small instances, while the
-greedy baseline reaches it on 94 of them. On medium instances, the GA provides
-the clearest improvement: it wins on 79 of 100 instances and improves the mean
-reward ratio from 0.967 to 1.000 relative to the best-known reward. On large
-instances, the improvement is smaller: the GA wins on 43 of 100 instances and
-improves the mean reward ratio from 0.993 to 1.000.
-Rows for travel budgets 200, 300, and 500 currently have matching GA result
-sets for medium instances. Large instances also have matching GA result sets for
-travel budget 200. Other small and large rows for those budgets report only the
-greedy baseline, so their reward-ratio entries are left blank until matching GA
-result sets are available for the same problem instances and travel budgets.
+The small-instance table also reports optimal instances, because exact optimal
+rewards are available for this instance size class.
+The greedy baseline is already very strong on small instances. Across travel
+budgets 15, 30, 50, and 100, the GA reaches the exact optimum on all 100 small
+instances, while the greedy baseline reaches the optimum on 92, 84, 88, and 94
+instances respectively. On medium instances, the GA produces higher average
+reward and slightly higher budget utilization for every reported travel budget,
+but this comes with a clear runtime cost: best-of-3 GA runtime ranges from
+17.700s to 209.730s, while greedy runtime remains below 1s. On large instances,
+the GA reward gains are smaller while the runtime cost is much larger, ranging
+from 207.493s to 1883.416s compared with greedy runtime from 2.544s to 45.382s.
+
+Budget utilization is close to full on medium and large instances for both
+approaches, indicating that the travel budget remains the active constraint at
+these sizes. On small instances, utilization is lower for two different reasons:
+with very small travel budgets, individual edge weights consume a large share of
+the budget and limit feasible insertions, while with larger budgets, most
+available reward can often be collected without using the full budget.
 
 \begin{table}[ht]
 \centering
-\caption{Planar Weighted Small instances. $L_{\max}$ denotes the travel budget.}
+\caption{Planar Weighted Small instances (10 vertices each). $L_{\max}$ denotes the travel budget. Optimal instances counts how many instances match the exact optimum.}
 \scriptsize
 \setlength{\tabcolsep}{3pt}
 \begin{tabular}{|l|r|r|r|r|r|}
 \hline
-Method & Instances & Avg. reward & Avg. reward ratio & Avg. budget utilization & Avg. runtime (s) \\
+Method & Instances & Avg. reward & Optimal instances & Avg. budget utilization & Avg. runtime (s) \\
+\hline
+\multicolumn{6}{|l|}{$L_{\max}=15$} \\
+\hline
+Greedy Baseline & 100 & 83.7 & 92 & 0.549 & \textbf{0.000} \\
+\hline
+Genetic Algorithm Best-of-3 & 100 & 85.9 & 100 & 0.574 & 0.698 \\
+\hline
+Small-Instance Exact Solver & 100 & \textbf{85.9} & \textbf{100} & \textbf{0.574} & 2.772 \\
 \hline
 \multicolumn{6}{|l|}{$L_{\max}=30$} \\
 \hline
-Greedy Baseline & 100 & 179.2 & 0.983 & 0.760 & 0.000 \\
+Greedy Baseline & 100 & 179.2 & 84 & 0.760 & \textbf{0.000} \\
 \hline
-Genetic Algorithm Best-of-3 & 100 & 182.4 & 1.000 & 0.786 & 0.977 \\
+Genetic Algorithm Best-of-3 & 100 & 182.4 & 100 & 0.786 & 0.977 \\
 \hline
-Small-Instance Exact Solver & 100 & 182.4 & 1.000 & 0.786 & 1.174 \\
+Small-Instance Exact Solver & 100 & \textbf{182.4} & \textbf{100} & \textbf{0.786} & 1.174 \\
+\hline
+\multicolumn{6}{|l|}{$L_{\max}=50$} \\
+\hline
+Greedy Baseline & 100 & 254.9 & 88 & 0.767 & \textbf{0.000} \\
+\hline
+Genetic Algorithm Best-of-3 & 100 & 257.1 & 100 & 0.782 & 1.279 \\
+\hline
+Small-Instance Exact Solver & 100 & \textbf{257.1} & \textbf{100} & \textbf{0.786} & 3.360 \\
 \hline
 \multicolumn{6}{|l|}{$L_{\max}=100$} \\
 \hline
-Greedy Baseline & 100 & 310.2 & 0.999 & 0.569 & 0.001 \\
+Greedy Baseline & 100 & 310.2 & 94 & 0.569 & \textbf{0.001} \\
 \hline
-Genetic Algorithm Best-of-3 & 100 & 310.5 & 1.000 & 0.571 & 2.036 \\
+Genetic Algorithm Best-of-3 & 100 & 310.5 & 100 & 0.571 & 2.036 \\
 \hline
-Small-Instance Exact Solver & 100 & 310.5 & 1.000 & 0.583 & 1.263 \\
-\hline
-\multicolumn{6}{|l|}{$L_{\max}=200$} \\
-\hline
-Greedy Baseline & 100 & 312.3 &  & 0.289 & 0.001 \\
-\hline
-\multicolumn{6}{|l|}{$L_{\max}=300$} \\
-\hline
-Greedy Baseline & 100 & 312.3 &  & 0.193 & 0.001 \\
-\hline
-\multicolumn{6}{|l|}{$L_{\max}=500$} \\
-\hline
-Greedy Baseline & 100 & 312.3 &  & 0.116 & 0.001 \\
+Small-Instance Exact Solver & 100 & \textbf{310.5} & \textbf{100} & \textbf{0.583} & 1.263 \\
 \hline
 \end{tabular}
 \label{tab:planar-weighted-small-ttsp-results}
@@ -929,36 +971,36 @@ Greedy Baseline & 100 & 312.3 &  & 0.116 & 0.001 \\
 
 \begin{table}[ht]
 \centering
-\caption{Planar Weighted Medium instances. $L_{\max}$ denotes the travel budget.}
+\caption{Planar Weighted Medium instances (100 vertices each). $L_{\max}$ denotes the travel budget.}
 \scriptsize
 \setlength{\tabcolsep}{3pt}
-\begin{tabular}{|l|r|r|r|r|r|}
+\begin{tabular}{|l|r|r|r|r|}
 \hline
-Method & Instances & Avg. reward & Avg. reward ratio & Avg. budget utilization & Avg. runtime (s) \\
+Method & Instances & Avg. reward & Avg. budget utilization & Avg. runtime (s) \\
 \hline
-\multicolumn{6}{|l|}{$L_{\max}=100$} \\
+\multicolumn{5}{|l|}{$L_{\max}=100$} \\
 \hline
-Greedy Baseline & 100 & 1415.4 & 0.967 & 0.990 & 0.039 \\
+Greedy Baseline & 100 & 1415.4 & 0.990 & \textbf{0.039} \\
 \hline
-Genetic Algorithm Best-of-3 & 100 & 1462.4 & 1.000 & 0.996 & 17.700 \\
+Genetic Algorithm Best-of-3 & 100 & \textbf{1462.4} & \textbf{0.996} & 17.700 \\
 \hline
-\multicolumn{6}{|l|}{$L_{\max}=200$} \\
+\multicolumn{5}{|l|}{$L_{\max}=200$} \\
 \hline
-Greedy Baseline & 100 & 2334.1 & 0.978 & 0.995 & 0.180 \\
+Greedy Baseline & 100 & 2334.1 & 0.995 & \textbf{0.180} \\
 \hline
-Genetic Algorithm Best-of-3 & 100 & 2387.8 & 1.000 & 0.997 & 52.983 \\
+Genetic Algorithm Best-of-3 & 100 & \textbf{2387.8} & \textbf{0.997} & 52.983 \\
 \hline
-\multicolumn{6}{|l|}{$L_{\max}=300$} \\
+\multicolumn{5}{|l|}{$L_{\max}=300$} \\
 \hline
-Greedy Baseline & 100 & 2971.0 & 0.981 & 0.996 & 0.320 \\
+Greedy Baseline & 100 & 2971.0 & 0.996 & \textbf{0.320} \\
 \hline
-Genetic Algorithm Best-of-3 & 100 & 3028.4 & 1.000 & 0.998 & 94.101 \\
+Genetic Algorithm Best-of-3 & 100 & \textbf{3028.4} & \textbf{0.998} & 94.101 \\
 \hline
-\multicolumn{6}{|l|}{$L_{\max}=500$} \\
+\multicolumn{5}{|l|}{$L_{\max}=500$} \\
 \hline
-Greedy Baseline & 100 & 3816.6 & 0.991 & 0.996 & 0.653 \\
+Greedy Baseline & 100 & 3816.6 & 0.996 & \textbf{0.653} \\
 \hline
-Genetic Algorithm Best-of-3 & 100 & 3851.0 & 1.000 & 0.998 & 209.730 \\
+Genetic Algorithm Best-of-3 & 100 & \textbf{3851.0} & \textbf{0.998} & 209.730 \\
 \hline
 \end{tabular}
 \label{tab:planar-weighted-medium-ttsp-results}
@@ -966,32 +1008,36 @@ Genetic Algorithm Best-of-3 & 100 & 3851.0 & 1.000 & 0.998 & 209.730 \\
 
 \begin{table}[ht]
 \centering
-\caption{Planar Weighted Large instances. $L_{\max}$ denotes the travel budget.}
+\caption{Planar Weighted Large instances (1000 vertices each). $L_{\max}$ denotes the travel budget.}
 \scriptsize
 \setlength{\tabcolsep}{3pt}
-\begin{tabular}{|l|r|r|r|r|r|}
+\begin{tabular}{|l|r|r|r|r|}
 \hline
-Method & Instances & Avg. reward & Avg. reward ratio & Avg. budget utilization & Avg. runtime (s) \\
+Method & Instances & Avg. reward & Avg. budget utilization & Avg. runtime (s) \\
 \hline
-\multicolumn{6}{|l|}{$L_{\max}=100$} \\
+\multicolumn{5}{|l|}{$L_{\max}=100$} \\
 \hline
-Greedy Baseline & 100 & 2361.4 & 0.993 & 0.996 & 2.544 \\
+Greedy Baseline & 100 & 2361.4 & 0.996 & \textbf{2.544} \\
 \hline
-Genetic Algorithm Best-of-3 & 100 & 2376.9 & 1.000 & 0.997 & 207.493 \\
+Genetic Algorithm Best-of-3 & 100 & \textbf{2376.9} & \textbf{0.997} & 207.493 \\
 \hline
-\multicolumn{6}{|l|}{$L_{\max}=200$} \\
+\multicolumn{5}{|l|}{$L_{\max}=200$} \\
 \hline
-Greedy Baseline & 100 & 4343.1 & 0.997 & 0.998 & 9.451 \\
+Greedy Baseline & 100 & 4343.1 & \textbf{0.998} & \textbf{9.451} \\
 \hline
-Genetic Algorithm Best-of-3 & 100 & 4356.0 & 1.000 & 0.998 & 568.352 \\
+Genetic Algorithm Best-of-3 & 100 & \textbf{4356.0} & \textbf{0.998} & 568.352 \\
 \hline
-\multicolumn{6}{|l|}{$L_{\max}=300$} \\
+\multicolumn{5}{|l|}{$L_{\max}=300$} \\
 \hline
-Greedy Baseline & 100 & 6047.4 &  & 0.999 & 17.749 \\
+Greedy Baseline & 100 & 6047.4 & \textbf{0.999} & \textbf{17.749} \\
 \hline
-\multicolumn{6}{|l|}{$L_{\max}=500$} \\
+Genetic Algorithm Best-of-3 & 100 & \textbf{6066.0} & \textbf{0.999} & 954.124 \\
 \hline
-Greedy Baseline & 100 & 9049.2 &  & 0.999 & 45.382 \\
+\multicolumn{5}{|l|}{$L_{\max}=500$} \\
+\hline
+Greedy Baseline & 100 & 9049.2 & 0.999 & \textbf{45.382} \\
+\hline
+Genetic Algorithm Best-of-3 & 100 & \textbf{9076.4} & \textbf{1.000} & 1883.416 \\
 \hline
 \end{tabular}
 \label{tab:planar-weighted-large-ttsp-results}
@@ -1003,9 +1049,9 @@ Greedy Baseline & 100 & 9049.2 &  & 0.999 & 45.382 \\
 The experiments show that the greedy baseline is a strong constructive method
 for the studied TTSP instances. On small instances it often reaches the exact
 optimum, especially with the larger travel budget. The genetic algorithm is most
-useful on medium instances, where it improves the mean reward ratio and beats the
-greedy baseline on most instances. On large instances, the current GA
-configuration gives only a small average reward improvement over greedy while
+useful on medium instances, where it improves average reward and budget
+utilization across the reported travel budgets. On large instances, the current
+GA configuration gives only a small average reward improvement over greedy while
 requiring substantially more runtime.
 \\ \\
 These results support the final project scope: a direct comparison between the
