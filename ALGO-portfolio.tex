@@ -823,11 +823,10 @@ scalable heuristic.
 
 The experiments use synthetic graph instances generated with Rudy, a C program
 for generating random graph instances~\cite{rudy}. Rudy is used to generate
-undirected planar graph topologies, after which random integer edge weights are
-assigned to the edges. Since Rudy does not generate rewards for the TTSP, each
-instance is augmented with one integer reward for every vertex. The depot is
-still treated separately by the algorithms, so the reward written for the depot
-is ignored when computing the collected reward.
+undirected planar graph topologies. Each generated instance is then augmented
+with random integer edge weights and a reward value for each vertex. Vertex 1 is
+used as the depot; although its reward is stored in the input format, it is
+excluded from reward collection.
 
 The generated data are organized into three instance size classes. The small
 collection contains 100 instances with 10 vertices each, the medium collection
